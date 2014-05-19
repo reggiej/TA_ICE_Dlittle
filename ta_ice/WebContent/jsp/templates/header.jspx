@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<f:view xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:ice-cc="http://www.icesoft.com/icefaces-composite-comps"
+	>
+
+	<ice:form partialSubmit="true" renderedOnUserRole="ROLE_URLACCESS">
+		<ice:panelGroup style="float: none">
+
+
+
+
+			<ice:panelGrid style="width: 100%;">
+
+				<div align="center">
+				
+				<ice:panelGroup>
+
+					<!-- <table width="1200px" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td width="50%" bgcolor="#000000">
+							<div align="right"><font color="#FF9900">DYNAMIC
+							PAGE - HIGHEST POSSIBLE CLASSIFICATION IS: </font></div>
+							</td>
+							<td width="50%" bgcolor="#FF9900">&ndsp;&nbsp;SECRET//NOFORN//20320108</td>
+						</tr>
+					</table> -->
+					<table width="1200px" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td><ice:graphicImage value="/images/Threat_bannerNew.gif" />
+							</td>
+						</tr>
+					</table>
+
+				 <ice:panelGrid style="width: 1024px;">
+
+ 					<div align="right"><ice:outputText
+						value="#{msgs['header.template.welcome']} #{siteAdmin.currentUser.firstName} #{siteAdmin.currentUser.lastName}"
+						style="color: 0000A0; font-style: italic"
+						renderedOnUserRole="ROLE_URLACCESS" /><ice:outputText value="!"
+						style="font-style: italic" />
+					</div>
+
+				</ice:panelGrid>
+				</ice:panelGroup>
+				</div>
+			</ice:panelGrid>
+
+		</ice:panelGroup>
+	</ice:form>
+</f:view>

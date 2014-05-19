@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf13238949372730" configfile="/ta_ice/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="*" x="122" y="2866" id="pf13238951083840" referenceLink="//@navigationRule.6/@fromViewId|" outlinks="pf13238951083842 pf13238951083848 pf13238951083849 pf132389510838410 pf132389510838412 pf13524257679061" path="*"/>
+  <nodes xsi:type="pageflow:PFPage" name="jsp/preferences/preferences" x="122" y="178" id="pf132389510838417" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" path="/jsp/preferences/preferences.jspx"/>
+  <nodes xsi:type="pageflow:PFPage" name="jsp/help/help" x="338" y="2482" id="pf132389510838418" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf13238951083842" path="/jsp/help/help.jspx"/>
+  <nodes xsi:type="pageflow:PFPage" name="jsp/viewDatasheet_Country" x="122" y="562" id="pf132389510838419" referenceLink="//@navigationRule.3/@navigationCase.0/@toViewId|" path="/jsp/viewDatasheet_Country.jspx"/>
+  <nodes xsi:type="pageflow:PFPage" name="jsp/viewDatasheet_State" x="122" y="946" id="pf132389510838420" referenceLink="//@navigationRule.4/@navigationCase.0/@toViewId|" path="/jsp/viewDatasheet_State.jspx"/>
+  <nodes xsi:type="pageflow:PFPage" name="jsp/viewDatasheet_Technology" x="122" y="1330" id="pf132389510838421" referenceLink="//@navigationRule.5/@navigationCase.0/@toViewId|" path="/jsp/viewDatasheet_Technology.jspx"/>
+  <nodes xsi:type="pageflow:PFPage" name="jsp/viewDatasheet_Entity" x="122" y="1714" id="pf132389510838422" referenceLink="//@navigationRule.6/@navigationCase.0/@toViewId|" path="/jsp/viewDatasheet_Entity.jspx"/>
+  <nodes xsi:type="pageflow:PFPage" name="jsp/todoPage.jspx" x="122" y="2098" id="pf132389510838423" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf13524257679061" path="/jsp/todoPage.jspx"/>
+  <nodes xsi:type="pageflow:PFPage" name="jsp/admin/siteAdministration.jspx" x="338" y="2866" id="pf132389510838430" referenceLink="//@navigationRule.7/@fromViewId|" outlinks="pf132389510838431 pf132389510838432" inlinks="pf13238951083848 pf13238951083849" path="/jsp/admin/siteAdministration.jspx"/>
+  <nodes xsi:type="pageflow:PFPage" name="jsp/admin/createUser.jspx" x="554" y="3068" id="pf132389510838433" referenceLink="//@navigationRule.10/@navigationCase.0/@toViewId|" outlinks="pf132389510838434" inlinks="pf132389510838431 pf132389510838412 pf132389510838434" path="/jsp/admin/createUser.jspx"/>
+  <nodes xsi:type="pageflow:PFPage" name="jsp/admin/viewUsers.jspx" x="554" y="2279" id="pf132389510838435" referenceLink="//@navigationRule.11/@navigationCase.0/@toViewId|" outlinks="pf132389510838436" inlinks="pf132389510838410 pf132389510838432 pf132389510838436" path="/jsp/admin/viewUsers.jspx"/>
+  <nodes xsi:type="pageflow:PFPage" name="jsp/viewSearch" x="122" y="2482" id="pf132389510838437" referenceLink="//@navigationRule.12/@navigationCase.0/@toViewId|" path="/jsp/viewSearch.jspx"/>
+  <nodes xsi:type="pageflow:PFPage" name="jsp/login" x="338" y="7666" id="pf132389510838438" referenceLink="//@navigationRule.9/@navigationCase.0/@toViewId|" inlinks="pf132389510838439 pf132389510838440" path="/jsp/login.jspx"/>
+  <nodes xsi:type="pageflow:PFPage" name="jsp/logoutSuccess" x="122" y="7474" id="pf132389510838441" referenceLink="//@navigationRule.8/@fromViewId|" outlinks="pf132389510838439" path="/jsp/logoutSuccess.jspx"/>
+  <nodes xsi:type="pageflow:PFPage" name="jsp/accessDenied" x="122" y="7858" id="pf132389510838442" referenceLink="//@navigationRule.9/@fromViewId|" outlinks="pf132389510838440" path="/jsp/accessDenied.jspx"/>
+  <nodes xsi:type="pageflow:PFPage" name="jsp/createAnalysis.jspx" x="122" y="3250" id="pf132389510838443" referenceLink="//@navigationRule.25/@navigationCase.0/@toViewId|" path="/jsp/createAnalysis.jspx"/>
+  <nodes xsi:type="pageflow:PFPage" name="jsp/createArtifact" x="122" y="3634" id="pf132389510838445" referenceLink="//@navigationRule.36/@navigationCase.0/@toViewId|" path="/jsp/createArtifact.jspx"/>
+  <nodes xsi:type="pageflow:PFPage" name="jsp/viewArtifact" x="122" y="4018" id="pf132389510838447" referenceLink="//@navigationRule.27/@navigationCase.0/@toViewId|" path="/jsp/viewArtifact.jspx"/>
+  <nodes xsi:type="pageflow:PFPage" name="jsp/adminViewElist" x="122" y="4402" id="pf13253436361109" referenceLink="//@navigationRule.37/@navigationCase.0/@toViewId|" path="/jsp/adminViewElist.jspx"/>
+  <nodes xsi:type="pageflow:PFPage" name="jsp/viewElist" x="122" y="4786" id="pf132534363611010" referenceLink="//@navigationRule.38/@navigationCase.0/@toViewId|" path="/jsp/viewElist.jspx"/>
+  <nodes xsi:type="pageflow:PFPage" name="jsp/inputForm" x="122" y="5170" id="pf132534363611011" referenceLink="//@navigationRule.39/@fromViewId|" path="/jsp/inputForm.jspx"/>
+  <nodes xsi:type="pageflow:PFPage" name="jsp/adminElistInputForm.iface" x="122" y="5554" id="pf132534363611013" referenceLink="//@navigationRule.39/@navigationCase.0/@toViewId|" path="/jsp/adminElistInputForm.iface"/>
+  <nodes xsi:type="pageflow:PFPage" name="jsp/adminElistEditForm.iface" x="122" y="5938" id="pf132534363611014" referenceLink="//@navigationRule.40/@navigationCase.0/@toViewId|" path="/jsp/adminElistEditForm.iface"/>
+  <nodes xsi:type="pageflow:PFPage" name="jsp/deleteImage.iface" x="122" y="6322" id="pf132534363611015" referenceLink="//@navigationRule.41/@navigationCase.0/@toViewId|" path="/jsp/deleteImage.iface"/>
+  <nodes xsi:type="pageflow:PFPage" name="jsp/addImage.iface" x="122" y="6706" id="pf132534363611016" referenceLink="//@navigationRule.42/@navigationCase.0/@toViewId|" path="/jsp/addImage.iface"/>
+  <nodes xsi:type="pageflow:PFPage" name="jsp/viewElistForm.iface" x="122" y="7090" id="pf132534363611017" referenceLink="//@navigationRule.43/@navigationCase.0/@toViewId|" path="/jsp/viewElistForm.iface"/>
+  <nodes xsi:type="pageflow:PFPage" name="jsp/viewImageList" x="122" y="8244" id="pf132536765784326" referenceLink="//@navigationRule.44/@navigationCase.0/@toViewId|" path="/jsp/viewImageList.jspx"/>
+  <nodes xsi:type="pageflow:PFPage" name="jsp/showArtifact" x="122" y="8629" id="pf13278516900861" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" path="/jsp/showArtifact.jspx"/>
+  <links id="pf13238951083842" target="pf132389510838418" source="pf13238951083840" outcome="help"/>
+  <links id="pf132389510838431" target="pf132389510838433" source="pf132389510838430" outcome="createUser"/>
+  <links id="pf13238951083848" target="pf132389510838430" source="pf13238951083840" outcome="siteAdministration"/>
+  <links id="pf13238951083849" target="pf132389510838430" source="pf13238951083840" outcome="siteAdministration"/>
+  <links id="pf132389510838410" target="pf132389510838435" source="pf13238951083840" outcome="viewUsers"/>
+  <links id="pf132389510838412" target="pf132389510838433" source="pf13238951083840" outcome="createUser"/>
+  <links id="pf132389510838432" target="pf132389510838435" source="pf132389510838430" outcome="viewUsers"/>
+  <links id="pf132389510838439" target="pf132389510838438" source="pf132389510838441" outcome="login"/>
+  <links id="pf132389510838440" target="pf132389510838438" source="pf132389510838442" outcome="login"/>
+  <links id="pf132389510838434" target="pf132389510838433" source="pf132389510838433" outcome="createUser">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+  <links id="pf132389510838436" target="pf132389510838435" source="pf132389510838435" outcome="viewUsers">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+  <links id="pf13524257679061" target="pf132389510838423" source="pf13238951083840" outcome="todoPage"/>
+</pageflow:Pageflow>

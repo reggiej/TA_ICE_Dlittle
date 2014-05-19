@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<f:view xmlns:f="http://java.sun.com/jsf/core"
+		xmlns:h="http://java.sun.com/jsf/html"
+		xmlns:ice="http://www.icesoft.com/icefaces/component"
+		xmlns:sec="http://www.springframework.org/security/facelets/tags"
+		xmlns:sql="http://java.sun.com/jsp/jstl/sql"
+		xmlns:ui="http://java.sun.com/jsf/facelets"
+		xmlns:ice-cc="http://www.icesoft.com/icefaces-composite-comps">
+		
+		
+		<ui:composition template="/jsp/templates/template.jspx" >
+			<ui:param name="title" value="#{msgs['home.title']}" />  
+			<ui:define name="header" />  
+			<ui:define name="menu" />
+			<ui:define name="content" >
+			<f:loadBundle var="msgs" basename="message"/>
+     <ice:form style="height: 700px">
+     <ice:outputStyle href="/css/rime/rime.css" />
+		<table align="center" title="#{msgs['home.title']}">
+			<tr>
+				<td><ice:panelGrid columns="1">
+					<ice:commandLink action="createUser" id="createU"
+						style="color: #0000FF; font-style: normal; font-size: 18px; text-decoration: underline;">
+						<ice:outputText value="Create New User"></ice:outputText>
+					</ice:commandLink>
+					<ice:commandLink action="viewUsers" id="viewU"
+						style="color: #0000FF; font-style: normal; font-size: 18px; text-decoration: underline">
+						<ice:outputText value="View Users"></ice:outputText>
+					</ice:commandLink>
+				</ice:panelGrid></td>
+			</tr>
+		</table>
+		<ice:messages style="color: red"/>
+     </ice:form>
+		</ui:define>  
+		<ui:define name="footer"/>
+	</ui:composition>
+</f:view>

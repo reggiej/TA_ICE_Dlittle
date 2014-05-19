@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<f:view xmlns:f="http://java.sun.com/jsf/core"
+		xmlns:ice="http://www.icesoft.com/icefaces/component"
+		xmlns:ui="http://java.sun.com/jsf/facelets">
+	
+	<html>
+	<head>
+	<title>Threat Application</title>
+	</head>
+	
+	<body style="background-position: center;background-color:#EEF9FF; 
+		background-repeat:no-repeat;background-attachment:fixed;text-align:center">
+	<ice:outputStyle href="/css/rime/rime.css" />
+	<div id="container">
+	
+		<div id="header" align="right">
+			<ui:include src="/jsp/templates/header.jspx"/> 
+			<ui:insert name="header"/>
+		</div>
+		<div>
+		<ice:panelGroup>
+
+		<div id="menu" align="center">
+			<ui:include src="/jsp/templates/menu.jspx"/> 
+			<ui:insert name="menu"/>
+		</div>
+		
+	<div align="center">
+		
+		<div id="mainContent" align="center">
+			<ui:insert name="content"/>
+		</div>
+		
+	</div>
+	</ice:panelGroup>	
+	</div>
+		<div id="footer" align="center">
+		    <ui:include src="/jsp/templates/footer.jspx" />
+		    <ui:insert name="footer" />		 	
+		</div>
+		
+	
+	</div>
+		
+	</body>
+	</html>
+</f:view>

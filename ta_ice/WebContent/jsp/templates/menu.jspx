@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<f:view 
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component"	
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+	
+	<ice:form partialSubmit="true">
+	
+		<ice:panelGroup style="float: none">
+			<ice:panelGrid style="width: 100%;">
+				<div align="center">
+				<ice:panelGroup>
+				<table width="1200px" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+				<td width="60%" align="left">
+				
+					<ice:menuBar orientation="Horizontal" style="text-align: center" id="menuinfo">
+					
+					<ice:menuItem id="homeButton" value="Home" action="#{siteAdmin.home}"  
+						renderedOnUserRole="ROLE_URLACCESS">
+					</ice:menuItem>
+															
+						<ice:menuItem id="create" value="Create" renderedOnUserRole="ROLE_URLACCESS">
+							<!-- action="createTravel" -->
+							<ice:menuItem id="analysis" value="Analysis" />
+							<ice:menuItem id="artifacts" value="Artifacts"/>
+						</ice:menuItem>
+						
+						
+						<ice:menuItem id="help" value="Help" action="help" renderedOnUserRole="ROLE_URLACCESS" />
+						
+						<ice:menuItem id="admin" value="Administation" renderedOnUserRole="ROLE_ADMIN" action="siteAdministration">
+						<!-- 	<ice:menuItem id="userView" value="View\Edit User" renderedOnUserRole="ROLE_ADMIN" action="viewUsers"/>
+							<ice:menuItem id="userCreate" value="Create User" renderedOnUserRole="ROLE_ADMIN" action="createUser"/> -->
+						</ice:menuItem>
+						
+							
+						
+					</ice:menuBar>
+					</td>
+					
+					
+					<td width="40%" align="right">
+					
+					<ice:panelGrid columns="4">
+					<div align="right">
+					<ice:outputText
+						value="#{msgs['header.template.welcome']} #{siteAdmin.currentUser.firstName} #{siteAdmin.currentUser.lastName}"
+						style="color: 0000A0; color: black"
+						renderedOnUserRole="ROLE_URLACCESS" />
+					<ice:outputText
+					value="#{siteAdmin.currentUserRoles}"
+					style="color: 0000A0;font-weight: bolder;color: black" renderedOnUserRole="ROLE_URLACCESS" />
+					
+					</div>
+					<ice:menuBar >
+					<ice:menuItem id="logoutButton" value="Logout" action="logout"
+							actionListener="#{logoutBean.logout}"  immediate="true" renderedOnUserRole="ROLE_URLACCESS">
+						</ice:menuItem>
+						
+					</ice:menuBar>
+					<ice:outputConnectionStatus id="notifPopPanConnStatus1" />	   
+					
+					</ice:panelGrid>
+					</td>
+					
+					</tr>
+					</table>
+					</ice:panelGroup>
+					
+				</div>
+			</ice:panelGrid>
+		</ice:panelGroup>
+	</ice:form>
+</f:view>

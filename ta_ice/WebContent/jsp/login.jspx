@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?> <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<f:view	xmlns:f="http://java.sun.com/jsf/core" 
+		xmlns:h="http://java.sun.com/jsf/html"
+		xmlns:ice="http://www.icesoft.com/icefaces/component"
+		xmlns:ui="http://java.sun.com/jsf/facelets">
+
+	<ui:composition template="/jsp/templates/template.jspx"> 
+	<ui:param name="title" value="#{msgs['home.title']}" />  
+	
+	<ui:define name="content" >
+
+	<f:loadBundle var="msgs" basename="message"/>
+    <ice:form style="width: 45%;" partialSubmit="false" >
+    <ice:outputStyle href="/css/rime/rime.css"/>
+    <ice:messages globalOnly="true"/>
+    <ice:panelPopup 
+                draggable="false" 
+                modal="true"
+                visible="true"
+                autoCentre="true">
+		<f:facet name="header"> 
+			<div class="loginheader" style="text-align: center">               
+		    	<ice:panelGroup styleClass="popupHeaderWrapper">
+		    		<ice:outputText value="#{msgs['login.loginheader']}"
+		    			style="font-size: 12pt; font-weight: normal; color: black;"/>		    			        	
+		        </ice:panelGroup>
+	        </div>
+		</f:facet>
+		<f:facet name="body">
+	       	<ice:panelGroup styleClass="popupBody">
+	       	
+	       		<ice:panelGrid columns="2" >
+	    	        <ice:outputLabel value="#{msgs['login.username']}" for="j_username"/>
+	        	    <ice:inputText id="j_username"
+	                        	   value="#{loginBean.userId}" size="40"
+	                    	       maxlength="40" />
+	            	<ice:outputLabel value="#{msgs['login.password']}" for="j_password"/>
+	            	<ice:inputSecret id="j_password"
+	            	                 value="#{loginBean.password}" size="40" 
+	                	             maxlength="40"/>
+	        	</ice:panelGrid>
+	        		<ice:commandButton actionListener="#{loginBean.login}"
+	        			value="#{msgs['login.loginButton']}" type="submit" />
+
+	        		
+	        		
+	        		<br></br>
+	
+					<ice:messages style="color: red"/>
+	        </ice:panelGroup>
+		</f:facet>
+
+	</ice:panelPopup>
+    </ice:form>
+ 
+    </ui:define>
+    <ui:define name="footer"/>
+    </ui:composition>
+
+</f:view>

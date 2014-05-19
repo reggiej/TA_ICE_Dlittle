@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<f:view xmlns:f="http://java.sun.com/jsf/core" 
+		xmlns:h="http://java.sun.com/jsf/html"
+		xmlns:ice="http://www.icesoft.com/icefaces/component"
+		xmlns:ui="http://java.sun.com/jsf/facelets">
+		
+		
+		<ui:composition template="/jsp/templates/template.jspx" >
+			<ui:param name="title" value="Todo List" />
+			<ui:define name="menu" />
+			<ui:define name="content" >
+			<f:loadBundle var="msgs" basename="message"/>
+	
+<ice:form>
+<ice:outputStyle href="/css/xp/xp.css" />
+	<ice:panelGroup>
+		<div style="float: none; border: .02em; border-style: solid; border-color: silver; padding: .20em" >
+		<ice:panelTabSet>
+			<ice:panelTab id="todoTab" label="Todo">
+				
+				<ice:panelGroup>
+					<ice:panelCollapsible id="activeAnalysisPanel" style="width: 940px">
+					<f:facet name="header">
+						<ice:panelGroup style="text-align: left">
+							<ice:outputText id="analysisCollapsiblePanel" value="Analysis" style="font-size: small"/>			
+						</ice:panelGroup>
+					</f:facet>
+<ice:panelGrid columns="1" id="ardfdtif" >
+					<td id="newinfodgfAna" width="100%" height="85%" style="float: none; border: .02em; border-style: solid; border-color: silver; padding: .20em">
+	
+		<ice:panelGrid id="sdgfkigj" style="width: 550px">
+					
+					<ice:outputLabel id="currentAnalysis" value="Linked Analysis" />
+					
+					
+					<ice:dataTable id="analysisToDoInventory" rows="5" var="row" style="width: 850px">
+					<ice:column style="text-align: center;width: 40px">
+						<f:facet name="header">
+							<ice:outputText value="Selected"/>
+						</f:facet>
+						<ice:graphicImage id="imageSelected" value="/images/Newbutton2.gif" rendered="#{row.selected}"/>
+					</ice:column>
+						<ice:column style="text-align: center;width: 80px">
+							<ice:rowSelector id="selected"
+											value="" 
+											multiple="false"
+											enhancedMultiple="false"                    
+                                 			
+                                 			immediate="false"
+                                 			preStyleOnSelection="true"/>		
+							<f:facet name="header">
+								<ice:outputText value="Date" />
+							</f:facet>
+							<ice:outputText value=""/>
+						</ice:column>
+						<ice:column style="text-align: left;width: 400px">
+							<f:facet name="header">
+								<ice:outputText value="Classification" />
+							</f:facet>
+							<ice:outputText value="" />
+						</ice:column>
+							<ice:column style="text-align: left;width: 40px">
+							<f:facet name="header">
+								<ice:outputText value="Agency" />
+							</f:facet>
+							<ice:outputText value="" />
+						</ice:column >
+						<ice:column style="text-align: left;width: 400px">
+							<f:facet name="header">
+								<ice:outputText value="Text Description" />
+							</f:facet>
+							<ice:outputText value="" />
+						</ice:column>
+					</ice:dataTable>
+										<ice:outputText id="anaflag" style="color: red" value="There are No Analysis on Your Todo List"/> 
+					
+				</ice:panelGrid>
+		
+				
+       </td>
+       </ice:panelGrid>
+      
+		
+				<ice:panelGrid columns="1" id="drgtfgtherButfg" style="width: 550px">
+								<td id="newinhgfoButfgh" style="float: none; border: .02em; border-style: solid; border-color: silver; padding: .20em;">
+			<ice:panelGrid id="dfhjhsdf" columns="4" style="width: 500px">
+					<ice:outputText id="dfsgsdfgghEdithjf" value="Edit View: " />
+                	<ice:commandButton id="edijhtInfofh" value="Edit Details" />
+                	
+                	<ice:outputText id="dfsgsdfghjSubmitgfhy" value="New Analysis: " />
+                	<ice:commandButton id="submikjtInfofh" value="Create Analysis:"  />
+            </ice:panelGrid>
+                
+                </td>
+                </ice:panelGrid>
+                
+						</ice:panelCollapsible>
+				</ice:panelGroup>
+				<ice:panelGroup>
+					<ice:panelCollapsible id="activeReportPanel" style="width: 940px">
+					<f:facet name="header">
+						<ice:panelGroup style="text-align: left">
+							<ice:outputText id="reportCollapsiblePanel" value="Equipment" style="font-size: small"/>			
+						</ice:panelGroup>
+					</f:facet>
+					
+					<ice:panelGroup>	
+					<ice:panelGrid columns="1" id="ardu6ywfdtif" >
+								<td id="newin35676kanooAna" width="100%" height="85%" style="float: none; border: .02em; border-style: solid; border-color: silver; padding: .20em">
+			
+				<ice:panelGrid id="elistPanel">
+					<ice:outputLabel id="relateA547kghokalna" value="Linked Equipment"/>
+
+					<ice:dataTable id="elistInventory" rows="15" var="row" >
+
+						<ice:column style="text-align: center">
+							<ice:rowSelector
+								value="#{checkboxBean.selected}"
+								selectionListener="#{viewELData.viewProcessSelection}" />
+							<f:attribute name="currentRow" value="1"/>
+							<f:facet name="header">
+								<ice:outputText value="Country" />
+							</f:facet>
+							<f:facet name="footer">
+								<ice:outputText value="Argentina" />
+							</f:facet>
+						</ice:column>
+
+						<ice:column style="text-align: center">
+							<f:facet name="header">
+								<ice:outputText value="Status" />
+							</f:facet>
+							<f:facet name="footer">
+								<ice:outputText value="Avail" />
+							</f:facet>
+						</ice:column>
+
+						<ice:column style="text-align: center">
+							<f:facet name="header">
+								<ice:outputText value="Organization" />
+							</f:facet>
+							<f:facet name="footer">
+								<ice:outputText value="Secretariat for Intelligence (SI or SIDE)" />
+							</f:facet>
+						</ice:column>
+
+						
+
+						<ice:column style="text-align: center">
+							<f:facet name="header">
+								<ice:outputText value="DOI" />
+							</f:facet>
+							<f:facet name="footer">
+								<ice:outputText value="28-Apr-08" />
+							</f:facet>
+						</ice:column>
+
+						<ice:column style="text-align: center">
+							<f:facet name="header">
+								<ice:outputText value="Quantity" />
+							</f:facet>
+							<f:facet name="footer">
+								<ice:outputText value="1" />
+							</f:facet>
+						</ice:column>
+
+						<ice:column style="text-align: center">
+							<f:facet name="header">
+								<ice:outputText value="Equipment Name" />
+							</f:facet>
+							<f:facet name="footer">
+								<ice:outputText value="Ipod" />
+							</f:facet>
+						</ice:column>
+
+						
+
+						<ice:column style="text-align: center">
+							<f:facet name="header">
+								<ice:outputText value="Manufacturer" />
+							</f:facet>
+							<f:facet name="footer">
+								<ice:outputText value="Spectronics" />
+							</f:facet>
+						</ice:column>
+
+						<ice:column style="text-align: center">
+							<f:facet name="header">
+								<ice:outputText value="Category" />
+							</f:facet>
+							<f:facet name="footer">
+								<ice:outputText value="GSM Intercept" />
+							</f:facet>
+						</ice:column>
+
+						<ice:column style="text-align: center">
+							<f:facet name="header">
+								<ice:outputText value="O/D" />
+							</f:facet>
+							<f:facet name="footer">
+								<ice:outputText value="O" />
+							</f:facet>
+						</ice:column>
+
+						<ice:column style="text-align: center">
+							<f:facet name="header">
+								<ice:outputText value="Source" />
+							</f:facet>
+							<f:facet name="footer">
+								<ice:outputText value="TD-314/064694-08" />
+							</f:facet>
+						</ice:column>
+
+						
+
+						<ice:column style="text-align: center">
+							<f:facet name="header">
+								<ice:outputText value="Classification" />
+							</f:facet>
+							<f:facet name="footer">
+								<ice:outputText value="S//NF" />
+							</f:facet>
+						</ice:column>
+
+					</ice:dataTable>
+								
+					<ice:panelGrid columns="1" id="art4ty67yi78ifBut" style="width: 542px">
+																<td id="newinh8567jgfogvhButfgh" style="float: none; border: .02em; border-style: solid; border-color: silver; padding: .20em;">
+				
+				<ice:panelGrid id="dfhusdf" columns="4" style="width: 500px">
+					<ice:outputText id="dfsu75ugsd" value="Edit View: " />
+                	<ice:commandButton id="ediu675utInh" value="Edit Details" />
+                	
+                	<ice:outputText id="dfsg7u8567sdmitgfhy" value="New Equipment " />
+                	<ice:commandButton id="subjh6799nfofh" value="Create Item:"  />
+            </ice:panelGrid>
+            </td>
+                </ice:panelGrid>
+				</ice:panelGrid>
+		</td>
+		</ice:panelGrid>
+		</ice:panelGroup>
+					</ice:panelCollapsible>
+				</ice:panelGroup>
+				<ice:panelGroup>
+					<ice:panelCollapsible id="activeArtifactPanel" style="width: 940px">
+					<f:facet name="header">
+						<ice:panelGroup style="text-align: left">
+							<ice:outputText id="artifactCollapsiblePanel" value="Artifact" style="font-size: small"/>			
+						</ice:panelGroup>
+					</f:facet>
+					
+					
+					
+				<ice:panelGrid columns="1" id="artif" >
+					<td id="newinfoAna" width="100%" height="85%" style="float: none; border: .02em; border-style: solid; border-color: silver; padding: .20em">
+					<ice:panelGrid columns="1" id="drgter">
+					<ice:outputLabel id="relateAna" value="Linked Artifact"/>
+					<ice:dataTable id="pendingRTADT" style="width: 850px" var="row" rows="5" columnWidths="5%,10%,10%,10%,10%,10%,10%" >
+						<ice:column style="text-align: center;width: 40px">
+						<f:facet name="header">
+							<ice:outputText value="Selected"/>
+						</f:facet>
+						<ice:graphicImage id="imageSelected" value="/images/Newbutton2.gif" rendered="#{row.selected}"/>
+					</ice:column>
+						<ice:column style="text-align: left;width: 40px">
+						
+							<f:facet name="header">
+								<ice:outputText value="SUBJECT" />
+							</f:facet>
+						<ice:outputText /> 
+						
+						</ice:column>
+						<ice:column style="text-align: left;width: 80px">
+							<f:facet name="header">
+								<ice:outputText value="SN" />
+							</f:facet>
+						<ice:outputText /> 
+						
+						</ice:column>
+							<ice:column style="text-align: left;width: 40px">
+							<f:facet name="header">
+								<ice:outputText value="OWNER" />
+							</f:facet>
+						<ice:outputText /> 
+						
+						</ice:column >
+						<ice:column style="text-align: left;width: 80px">
+							<f:facet name="header">
+								<ice:outputText value="STATUS" />
+							</f:facet>
+						<ice:outputText /> 
+						
+						</ice:column >
+						<ice:column style="text-align: left;width: 100px">
+							<f:facet name="header">
+								<ice:outputText value="DATE" />
+							</f:facet>
+						<ice:outputText /> 
+						
+						</ice:column>
+						
+						<ice:column style="text-align: left;width: 100px">
+							<f:facet name="header">
+								<ice:outputText value="CLASSIFICATION" />
+							</f:facet>
+						<ice:outputText /> 
+						
+						</ice:column>
+						<ice:column style="text-align: left;width: 100px">
+							<f:facet name="header">
+								<ice:outputText value="Title" />
+							</f:facet>
+						<ice:outputText /> 
+						
+						</ice:column>
+					</ice:dataTable>
+					<ice:outputText id="anaflag" style="color: red" value="There are No Artifacts on Your Todo List"/> 
+					
+					</ice:panelGrid>
+					</td>
+				</ice:panelGrid>
+				
+				
+				
+				
+				
+				
+				<ice:panelGrid columns="1" id="artifBut" style="width: 542px">
+																<td id="newinhgfogvhButfgh" style="float: none; border: .02em; border-style: solid; border-color: silver; padding: .20em;">
+				
+				<ice:panelGrid id="dfhsdf" columns="4" style="width: 500px">
+					<ice:outputText id="dfsgsd" value="Edit View: " />
+                	<ice:commandButton id="editInh" value="Edit Details" />
+                	
+                	<ice:outputText id="dfsgsdmitgfhy" value="New Artifact " />
+                	<ice:commandButton id="subnfofh" value="Create Artifact:"  />
+            </ice:panelGrid>
+            </td>
+                </ice:panelGrid>
+                
+               
+                
+                
+					</ice:panelCollapsible>
+				</ice:panelGroup>
+				
+				<ice:panelGroup>
+					<ice:panelCollapsible id="activeDatasheetPanel" style="width: 940px">
+					<f:facet name="header">
+						<ice:panelGroup style="text-align: left">
+							<ice:outputText id="datasheetCollapsiblePanel" value="Datasheet" style="font-size: small"/>			
+						</ice:panelGroup>
+					</f:facet>
+					
+					<ice:panelGrid columns="1" id="datasheetPanel" >
+						<td id="newinfgffodgfAna" style="float: none; border: .02em; border-style: solid; border-color: silver; padding: .20em">
+					
+					<ice:outputLabel id="currentDatasheet" value="Linked Datasheet" />
+					
+				
+				<ice:dataTable id="selectedDatasheetToDoInventory" rows="10"
+						style="width: 850px" var="row">
+						<ice:column style="text-align: center">
+							<f:facet name="header">
+								<ice:outputText value="DATE" />
+							</f:facet>
+							<ice:outputText value="" />
+						</ice:column>
+						<ice:column >
+							<f:facet name="header">
+								<ice:outputText value="CATEGORY" />
+							</f:facet>
+							<ice:outputText value="" />
+						</ice:column>
+						<ice:column>
+							<f:facet name="header">
+								<ice:outputText value="DESCRIPTION" />
+							</f:facet>
+							<ice:outputText value="" />
+						</ice:column>
+					</ice:dataTable>
+					<ice:outputText id="anaflag" style="color: red" value="There are No Datasheet on Your Todo List"/>
+				</td>
+				</ice:panelGrid>
+                <ice:panelGrid columns="1" id="artifdfBut" style="width: 600px">
+																<td id="newinhgdffogvhButfgh" style="float: none; border: .02em; border-style: solid; border-color: silver; padding: .20em;">
+				
+				<ice:panelGrid id="dfhsdfdf" columns="4" style="width: 500px">
+					<ice:outputText id="dfdfsgsd" value="Edit View: " />
+                	<ice:commandButton id="edidftInh" value="Edit Details" />
+                	
+                	<ice:outputText id="dfsgsdfdmitgfhy" value="New Datasheet: " />
+                	<ice:commandButton id="subndffofh" value="Create Datasheet:"  />
+            </ice:panelGrid>
+            </td>
+                </ice:panelGrid>
+                
+					
+					</ice:panelCollapsible>
+				</ice:panelGroup>
+				
+				
+				
+				</ice:panelTab>
+				<ice:panelTab id="todoTab2" label="Categories">
+				<ice:panelGrid columns="3">
+					<ice:outputLabel for="secfertlab" value="View Avalible Categories:" />
+							
+									<ice:selectOneMenu partialSubmit="true" style="width: 350px" >
+							<f:selectItem id="requestugiyt67Tysdpe"  itemValue="Countries"/>
+							<f:selectItem id="requestugiyt6h7Tysdpe"  itemValue="States"/>
+							<f:selectItem id="requestugiyt6g7Tysdpe"  itemValue="Technology"/>
+							<f:selectItem id="requestugiyt6d7Tysdpe"  itemValue="Entities"/>
+					</ice:selectOneMenu>
+									<ice:message for="secfertlab" style="color: red;"/>
+				</ice:panelGrid>
+				</ice:panelTab>
+				<ice:panelTab id="todoTab3" label="Search">
+				
+				<ice:panelGroup>
+					<ice:panelTabSet>
+					<ice:panelTab id="Artifacts" label="Artifacts">
+					</ice:panelTab>
+					<ice:panelTab id="Analysis" label="Analysis">
+					</ice:panelTab>
+					<ice:panelTab id="Datasheets" label="Datasheets">
+					</ice:panelTab>
+					<ice:panelTab id="Equipment" label="Equipment">
+					</ice:panelTab>
+					
+					</ice:panelTabSet>
+					
+					
+				</ice:panelGroup>
+				</ice:panelTab>
+				<ice:panelTab id="todoTab4" label="View Selected Analysis" rendered="false">
+				<ice:panelGroup>
+					<div style="float: none; border: .02em; border-style: solid; border-color: silver;" >			
+					    
+					    <ice:panelGrid columns="3"  
+						   	style="margin:25px; background-image: none; 
+						   	letter-spacing: normal; font-family: Verdana, Arial, Sans-Serif; 
+						   	word-spacing: normal">
+
+							<!-- Analysis ID -->
+							<ice:outputLabel for="analysisID" value="Analysis ID: "/>
+							<ice:outputText id="analysisID" value="" 
+								size="30" disabled="false"/>
+							<ice:message for="analysisID" style="color: red;"/>
+							
+							<!-- Analysis Date -->
+							<ice:outputLabel for="lastUpdateTS" value="Date:" />
+							<ice:outputText id="lastUpdateTS" value="" 
+								size="30" disabled="false"/>
+							<ice:message for="lastUpdateTS" style="color: red;"/>
+							
+							<!-- Classification -->
+							<ice:outputLabel for="seclab" value="Classification:" />
+							
+									<ice:selectOneMenu partialSubmit="true" style="width: 350px" value="" />
+									<ice:message for="seclab" style="color: red;"/>
+							
+							<!-- Analysis Text -->
+							<ice:outputLabel for="textbox" value="Description:" />
+							<ice:inputText id="textbox" value="" 
+								size="200" disabled="false" style="height: 250px; width: 350px"/>
+							<ice:message for="textbox" style="color: red;"/>
+						</ice:panelGrid>
+						
+
+						
+					</div>
+				</ice:panelGroup>
+				</ice:panelTab>
+			</ice:panelTabSet>
+			</div>
+			</ice:panelGroup>
+			
+</ice:form>
+ </ui:define>
+ 
+			<ui:define name="footer"/>
+	</ui:composition> 
+</f:view>

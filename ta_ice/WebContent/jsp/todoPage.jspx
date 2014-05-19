@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view	xmlns:f="http://java.sun.com/jsf/core" 
+		xmlns:h="http://java.sun.com/jsf/html"
+		xmlns:ice="http://www.icesoft.com/icefaces/component"
+		xmlns:ui="http://java.sun.com/jsf/facelets">
+
+	<ui:composition template="/jsp/templates/template.jspx"> 
+	
+<ui:define name="headers"/>
+<ui:define name="menu"/>
+	<ui:define name="content">
+
+   <ice:form id="from">
+     Hello World I finally made it...
+   
+   </ice:form>
+   </ui:define>
+	<ui:define name="footer"/>
+</ui:composition>
+
+
+</f:view>
+   
+		<%-- <ice:form id="form">
+
+			<f:loadBundle var="msgs" basename="message" />
+			<div align="center">
+				<div id="mainContent" align="center">
+					<ice:panelGroup style="float: none">
+						<div align="center">
+							<ice:panelGrid style="width: 100%;">
+`	
+								<div align="center">
+								<ice:panelGroup id="pggrid1234" style="float: none">
+										<ice:panelGrid id="pggrid12"  columns="2">
+										<f:facet name="Bob"> Hello World I made it</f:facet>
+										<!--  <ice:outputText value="Hello"/> -->
+									    <ice:outputText value="#{msgs['todo.address']}"/>
+										<ice:inputText id="j_address" value="#{createAddress.address.address}" size="40" maxlength="40"/>
+										 
+										
+										<ice:outputText value="#{msgs['todo.city']}"/>
+										<ice:inputText id="j_city" value="#{createAddress.address.city}" size="40" maxlength="40"/>
+										
+										<ice:outputText value="#{msgs['todo.state']}"/>
+										<ice:inputText id="j_state" value="#{createAddress.address.state}" size="40" maxlength="40"/>
+										
+										<ice:outputText value="#{msgs['todo.zip']}"/>
+										<ice:inputText id="j_zip" value="#{createAddress.address.zip}" size="40" maxlength="40"/>
+										
+										
+                                        <ice:commandButton id="redbutGo" action="#{createAddress.createNewAddress}"
+	        			               value="#{msgs['todo.InsertButton']}" type="submit"  />
+                                        </ice:panelGrid>
+                                        </ice:panelGroup>
+									</div>
+									
+									<div align="center">
+									<ice:panelGrid id="herrpg34">
+											<ice:dataTable id="addressin"  value="#{createAddress.currentAddresss}"   var="value" >
+
+												<ice:column>
+												<ice:rowSelector id="selected"  selectionListener="#{createAddress.rowSelectionListener}" 
+												multiple="false" selectedClass="tableRowSelected" mouseOverClass="tableRowMouseOver" />
+												<f:facet name="header">
+														<ice:outputText value="#{msgs['todo.showAddress']}" />
+													</f:facet>
+													<ice:outputText value="#{value.address }"/>
+												</ice:column>
+
+                                              <ice:column>
+												<f:facet name="header">
+														<ice:outputText value="#{msgs['todo.showCity']}" />
+													</f:facet>
+													<ice:outputText value="#{value.city } "/>
+												</ice:column>
+												
+												<ice:column>
+												<f:facet name="header">
+														<ice:outputText value="#{msgs['todo.showState']}" />
+													</f:facet>
+													<ice:outputText value="#{value.state}"/>
+												</ice:column>
+												
+												<ice:column>
+												<f:facet name="header">
+														<ice:outputText value="#{msgs['todo.showZip']}" />
+													</f:facet>
+													<ice:outputText value="#{value.zip } "/>
+												</ice:column>
+												
+												<ice:column>
+												<f:facet name="header">
+														<ice:outputText value="#{msgs['todo.showDate']}" />
+													</f:facet>
+													<ice:outputText value="#{value.effectiveDate}"/> 
+													
+												</ice:column>
+											</ice:dataTable>
+
+
+										</ice:panelGrid>
+										<ice:commandButton action="#{createAddress.removeAddress}"
+	        			               value="#{msgs['todo.DeleteButton']}" type="submit" />
+										</div>
+							</ice:panelGrid>
+						</div>
+						
+						 <div align="center">
+									<ice:panelGrid id="hnuyr76">
+									<ice:dataTable id="selection"  value="#{createAddress.adderAddresss}"   var="value" >
+									<ice:column>
+												
+												<f:facet name="header">
+														<ice:outputText value="#{msgs['todo.showAddress']}" />
+													</f:facet>
+													<ice:outputText value="#{value.address }"/>
+												</ice:column>
+
+                                              <ice:column>
+												<f:facet name="header">
+														<ice:outputText value="#{msgs['todo.showCity']}" />
+													</f:facet>
+													<ice:outputText value="#{value.city } "/>
+												</ice:column>
+												
+												<ice:column>
+												<f:facet name="header">
+														<ice:outputText value="#{msgs['todo.showState']}" />
+													</f:facet>
+													<ice:outputText value="#{value.state}"/>
+												</ice:column>
+												
+												<ice:column>
+												<f:facet name="header">
+														<ice:outputText value="#{msgs['todo.showZip']}" />
+													</f:facet>
+													<ice:outputText value="#{value.zip } "/>
+												</ice:column>
+												
+												<ice:column>
+												<f:facet name="header">
+														<ice:outputText value="#{msgs['todo.showDate']}" />
+													</f:facet>
+													<ice:outputText value="#{value.effectiveDate}"/>
+													
+												</ice:column>
+									
+									</ice:dataTable>
+									</ice:panelGrid>
+									</div>
+					</ice:panelGroup>
+
+				</div>
+			</div>
+		</ice:form> --%>
+	

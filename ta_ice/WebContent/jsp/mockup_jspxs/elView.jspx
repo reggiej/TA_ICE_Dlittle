@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<f:view	xmlns:f="http://java.sun.com/jsf/core"
+		xmlns:h="http://java.sun.com/jsf/html"
+		xmlns:ui="http://java.sun.com/jsf/facelets"
+		xmlns:ice="http://www.icesoft.com/icefaces/component">
+
+		<ui:composition template="/jsp/templates/template.jspx" >
+			<ui:param name="title" value="Global Equipment List" />
+			<ui:define name="menu" />
+			<ui:define name="content" >
+			<f:loadBundle var="msgs" basename="message" />
+		
+<ice:form>
+<ice:outputStyle href="/css/xp/xp.css" />
+	<ice:panelGroup>
+		<div style="float: none; border: .02em; border-style: solid; border-color: silver; padding: .20em" >
+
+		<ice:panelGroup>
+			<ice:panelCollapsible  id="searchPanel" style="width: 100%" expanded="true">
+				<f:facet name="header">
+					<ice:panelGroup style="text-align: left">
+						<ice:outputText id="searchCollapsiblePanel" value="Search (Click to Expand)" style="font-size: small" />
+					</ice:panelGroup>
+				</f:facet>
+								
+				<ice:panelGrid>
+					<f:facet name="header">
+						<ice:outputText value="Search String: "/>
+					</f:facet>
+					<ice:inputText id="searchBox" style="width: 250px" value="Argentina" />
+				</ice:panelGrid>
+
+				<ice:panelGrid>
+					<f:facet name="header">
+						<ice:outputText value="From Column: "/>
+										</f:facet>
+					<ice:selectOneListbox value="Country" styleClass="listStyle" size="1">
+						<f:selectItem itemLabel="Country" itemValue="Country"/>
+					</ice:selectOneListbox>
+				</ice:panelGrid>
+								
+				<ice:panelGrid>
+					<ice:commandButton title="Search"
+						value="Search" />
+				</ice:panelGrid>
+
+				<ice:panelGrid style="width: 80%" draggable="true">
+					<ice:panelPopup>
+						<f:facet name="header">
+							<ice:outputText value="Search String Help" />
+						</f:facet>
+						<f:facet name="body">
+							<ice:outputText value="To bring back the entire list after a search, perform a search 
+								with a blank search string. All searches look for strings that 'contain' the search string. 
+								Searches are 'not' case sensitive" style="font-size: medium" />
+						</f:facet>
+					</ice:panelPopup>
+				</ice:panelGrid>
+
+			</ice:panelCollapsible>
+		</ice:panelGroup>
+
+		<ice:panelGroup>	
+			<ice:panelCollapsible id="activeElistPanel" style="width: 100%" expanded="true">
+				<f:facet name="header">
+					<ice:panelGroup style="text-align: left">
+						<ice:outputText id="elistCollapsiblePanel" value="Global Equipment List" style="font-size: small"/>
+					</ice:panelGroup>
+				</f:facet>
+				<ice:panelGrid id="elistPanel">
+					<ice:outputText id="currentlist" value="Complete List (1 Items)" />
+
+					<ice:dataTable id="elistInventory" rows="15" var="row" >
+
+						<ice:column style="text-align: center">
+							<ice:rowSelector
+								value="#{checkboxBean.selected}"
+								selectionListener="#{viewELData.viewProcessSelection}" />
+							<f:attribute name="currentRow" value="1"/>
+							<f:facet name="header">
+								<ice:outputText value="Country" />
+							</f:facet>
+							<f:facet name="footer">
+								<ice:outputText value="Argentina" />
+							</f:facet>
+						</ice:column>
+
+						<ice:column style="text-align: center">
+							<f:facet name="header">
+								<ice:outputText value="Status" />
+							</f:facet>
+							<f:facet name="footer">
+								<ice:outputText value="Avail" />
+							</f:facet>
+						</ice:column>
+
+						<ice:column style="text-align: center">
+							<f:facet name="header">
+								<ice:outputText value="Organization" />
+							</f:facet>
+							<f:facet name="footer">
+								<ice:outputText value="Secretariat for Intelligence (SI or SIDE)" />
+							</f:facet>
+						</ice:column>
+
+						
+
+						<ice:column style="text-align: center">
+							<f:facet name="header">
+								<ice:outputText value="DOI" />
+							</f:facet>
+							<f:facet name="footer">
+								<ice:outputText value="28-Apr-08" />
+							</f:facet>
+						</ice:column>
+
+						<ice:column style="text-align: center">
+							<f:facet name="header">
+								<ice:outputText value="Quantity" />
+							</f:facet>
+							<f:facet name="footer">
+								<ice:outputText value="1" />
+							</f:facet>
+						</ice:column>
+
+						<ice:column style="text-align: center">
+							<f:facet name="header">
+								<ice:outputText value="Equipment Name" />
+							</f:facet>
+							<f:facet name="footer">
+								<ice:outputText value="Ipod" />
+							</f:facet>
+						</ice:column>
+
+						<ice:column style="text-align: center">
+							<f:facet name="header">
+								<ice:outputText value="Originating Country" />
+							</f:facet>
+							<f:facet name="footer">
+								<ice:outputText value="Denmark" />
+							</f:facet>
+						</ice:column>
+
+						<ice:column style="text-align: center">
+							<f:facet name="header">
+								<ice:outputText value="Manufacturer" />
+							</f:facet>
+							<f:facet name="footer">
+								<ice:outputText value="Spectronics" />
+							</f:facet>
+						</ice:column>
+
+						<ice:column style="text-align: center">
+							<f:facet name="header">
+								<ice:outputText value="Category" />
+							</f:facet>
+							<f:facet name="footer">
+								<ice:outputText value="GSM Intercept" />
+							</f:facet>
+						</ice:column>
+
+						<ice:column style="text-align: center">
+							<f:facet name="header">
+								<ice:outputText value="O/D" />
+							</f:facet>
+							<f:facet name="footer">
+								<ice:outputText value="O" />
+							</f:facet>
+						</ice:column>
+
+						<ice:column style="text-align: center">
+							<f:facet name="header">
+								<ice:outputText value="Source" />
+							</f:facet>
+							<f:facet name="footer">
+								<ice:outputText value="TD-314/064694-08" />
+							</f:facet>
+						</ice:column>
+
+						
+
+						<ice:column style="text-align: center">
+							<f:facet name="header">
+								<ice:outputText value="Classification" />
+							</f:facet>
+							<f:facet name="footer">
+								<ice:outputText value="S//NF" />
+							</f:facet>
+						</ice:column>
+
+					</ice:dataTable>
+								
+					<div align="center">
+					<!-- Page Controls -->
+					<ice:dataPaginator id="dataPaginator_sic"
+						for="elistInventory"
+						paginator="true"
+						fastStep="5"
+						paginatorMaxPages="10" >
+
+						<f:facet name="first">
+							<ice:graphicImage
+								url="/css/xp/css-images/arrow-first.gif"
+								style="border:none"
+								title="First Page" />
+						</f:facet>
+
+						<f:facet name="last">
+							<ice:graphicImage
+								url="/css/xp/css-images/arrow-last.gif"
+								style="border:none"
+								title="Last Page" />
+						</f:facet>
+
+						<f:facet name="previous">
+							<ice:graphicImage
+								url="/css/xp/css-images/arrow-previous.gif"
+								style="border:none"
+								title="Previous Page" />
+						</f:facet>
+
+						<f:facet name="next">
+							<ice:graphicImage
+								url="/css/xp/css-images/arrow-next.gif"
+								style="border:none"
+								title="Next Page" />
+						</f:facet>
+
+						<f:facet name="fastforward">
+							<ice:graphicImage
+								url="/css/xp/css-images/arrow-ff.gif"
+								style="border:none"
+								title="Fast Forward" />
+						</f:facet>
+
+						<f:facet name="fastrewind">
+							<ice:graphicImage
+								url="/css/xp/css-images/arrow-fr.gif"
+								style="border:none"
+								title="Fast Rewind" />
+						</f:facet>
+					</ice:dataPaginator>
+								
+					</div> 
+				</ice:panelGrid>
+			</ice:panelCollapsible>
+		</ice:panelGroup>
+		</div>		
+	</ice:panelGroup>	
+</ice:form>
+		
+		</ui:define>
+	</ui:composition>
+</f:view>

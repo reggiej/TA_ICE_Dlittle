@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<f:view xmlns:f="http://java.sun.com/jsf/core"
+		xmlns:ice="http://www.icesoft.com/icefaces/component"
+		xmlns:ui="http://java.sun.com/jsf/facelets">
+	
+	<html>
+		<f:loadBundle var="msgs" basename="message"/>
+		<head><title>${msgs['home.title']}</title></head>
+		<ice:outputStyle href="/css/woodstock/woodstock.css" />
+		<body style="background-position: center;background-color:white; 
+			background-repeat:no-repeat;background-attachment:fixed;text-align:center">
+			<div id="container">
+			<div id="logoutHeader" align="center">
+				<ui:include src="/jsp/templates/logoutHeader.jspx"/> 
+				<ui:insert name="logoutHeader"/>
+			</div>
+			<div id="mainContent">
+				<ui:insert name="content"/>
+			</div>
+			<div id="footer" >
+			    <ui:insert name="footer" />
+				<ui:include src="/jsp/templates/footer.jspx" /></div>
+			</div>
+		</body>
+		<ice:messages style="color: red;"/>
+	</html>
+</f:view>

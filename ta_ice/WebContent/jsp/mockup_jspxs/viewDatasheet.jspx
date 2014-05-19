@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<f:view xmlns:f="http://java.sun.com/jsf/core" 
+		xmlns:h="http://java.sun.com/jsf/html"
+		xmlns:ice="http://www.icesoft.com/icefaces/component"
+		xmlns:ui="http://java.sun.com/jsf/facelets">
+		
+		
+		<ui:composition template="/jsp/templates/template.jspx" >
+			<ui:param name="title" value="Todo List" />
+			<ui:define name="menu" />
+			<ui:define name="content" >
+			<f:loadBundle var="msgs" basename="message"/>
+	
+<ice:form>
+<ice:outputStyle href="/css/xp/xp.css" />
+	<ice:panelGroup>
+		<div align="center">
+		
+				
+				
+				
+				<ice:panelGroup>
+					<ice:panelCollapsible id="activeArtifactPanel" style="width: 900px" expanded="true">
+					<f:facet name="header">
+						<ice:panelGroup style="text-align: left">
+							<ice:outputText id="datasheetCollapsiblePanel" value="Selected Datasheet Details" />
+						</ice:panelGroup>
+					</f:facet>
+					
+					
+					
+					
+					
+				<ice:panelGrid columns="1" id="artif" >
+				
+				<td id="newi153nfoAnaty" style="float: none; border: .02em; border-style: solid; border-color: silver; padding: .20em">
+														<td id="n36490ewinfo56d0utaba" style="float: none; border: .02em; border-style: solid; border-color: silver; padding: .20em">
+					
+					<ice:panelGrid columns="2" id="d246rgter" style="width: 400px">
+					
+					<ice:outputLabel id="rela3409teAnadgData" value="Country Datasheet: " />
+					<ice:outputLabel id="relaj3409teAnadgData" value="United Kingdom" />
+					<ice:outputLabel id="re908lateAnadf23dgData" value="Date: " />
+					<ice:outputLabel id="r908elateAnadf23dgData" value="10-21-2011" />
+			
+			<ice:outputLabel id="re908lateAnad56f23dgData" value="Status: " />
+			<ice:outputLabel id="re908late45Anad56f23dgData" value="View Mode " />
+			
+					</ice:panelGrid>
+					</td>
+					<ice:panelGrid columns="1"  id="a90rtie545fButana" style="width: 888px; ">
+				<div align="center">
+				<ice:graphicImage id="dfuhjgrepinfobanner" url="/images/uk-flag.gif" style="height: 120px; width: 180px"/>	
+				</div>
+			
+	
+                </ice:panelGrid>
+					
+					
+					</td>
+				
+					<td id="newinfoAnaty" style="float: none; border: .02em; border-style: solid; border-color: silver; padding: .20em">
+					<ice:panelGrid columns="3" id="drgter" >
+					<ice:outputLabel id="relateAnuy65adgData"  value="General Information" />
+					
+					<ice:outputLabel id="relateAnu36y65adgData"  value="" />
+					<ice:outputLabel id="relateAngt56uy65adgData"  value="" />
+					<ice:outputLabel id="relateAnadgData" style="font-size: xx-small;" value="Subheader" rendered="false" />
+					
+					<ice:commandButton id="relattyt23eAnadgData" style="font-size: xx-small" value="Add New" rendered="false" />
+			
+					
+					<ice:panelGrid columns="1" id="artifButana" >
+				<td id="newinfo56d0utaba" style="float: none; border: .02em; border-style: solid; border-color: silver; padding: .20em">
+					
+<ice:panelGrid id="fr234gfdtest" style="cursor:move;" >
+<ice:outputText id="eret2345frest" style="white-space: normal;">
+(U)CSIS continues to believe that the Russian Foreign Intelligence Service (SVR) has greatly reduced itslevel of activity in Canada and has been largely involved in collection of overt commercial information. The Main Intelligence Directorate (GRU)remains active and continues to develop Canadian officials, presumably as rec targets.
+(A96672-01 Sept 2002;A95959-01 MArch 2002; FBIS, LAP20010510000021, 10 May 01; State 57573-8 MAr 95)" 
+<ice:outputText value=" ["/>
+<ice:commandLink id="dtest65go" style="font-size: xx-small">Edit Analysis</ice:commandLink>
+<ice:outputText value="] "/>
+</ice:outputText>
+</ice:panelGrid>
+			</td>
+			<td id="newinfo56dd0utaba" style="float: none; border: .02em; border-style: solid; border-color: silver; padding: .20em">
+					
+<ice:panelGrid id="fr234gffdtest" style="cursor:move;" >
+<ice:outputText id="eret23f45frest" style="white-space: normal;">
+(U)The Canadian government has identified 24 known or suspected Russian intelligence officers, 15 SVR and 9 GRU.(A96672-01 Sept 2002;A95959-01 MArch 2002; FBIS, LAP20010510000021, 10 May 01; State 57573-8 MAr 95)" 
+<ice:outputText value=" ["/>
+<ice:commandLink id="dtesdt65go" style="font-size: xx-small">Edit Analysis</ice:commandLink>
+<ice:outputText value="] "/>
+</ice:outputText>
+
+</ice:panelGrid>
+			</td>
+					<td id="newinfoButaba" style="float: none; border: .20em; border-style: solid; border-color: silver; padding: .20em">
+					<ice:panelGrid columns="2" id="drgterButana" rendered="false">
+			
+					<ice:commandButton id="dfsgsdfgEditaba" value="Create Analysis:" style="font-size: xx-small" />
+                	<ice:commandButton id="editInfoba" value="Link Analysis" style="font-size: xx-small"/>
+                	
+                	
+                </ice:panelGrid>
+                </td>
+                </ice:panelGrid>
+					
+					</ice:panelGrid>
+					</td>
+					
+				</ice:panelGrid>
+				
+				<ice:panelGrid columns="1" id="artifData" style="width: 888px">
+					<td id="newinfoData" style="float: none; border: .02em; border-style: solid; border-color: silver; padding: .20em">
+					<ice:panelGrid columns="3" id="drgterData">
+					<ice:outputLabel id="relateAnaData" value="U.S. and Host Country Relations"/>
+					<ice:outputLabel id="relat56eAnadgData" style="font-size: xx-small;" value="" />
+					
+					<ice:outputLabel id="relattyt23eA65nadgData" style="font-size: xx-small" value="" />
+			
+					 
+					
+					<ice:panelGrid columns="1" id="artifButdata" >
+					
+					<td id="new87info56d0utaba" style="float: none; border: .02em; border-style: solid; border-color: silver; padding: .20em">
+					
+<ice:panelGrid id="fr234gf8dtest" style="cursor:move;" >
+<ice:outputText id="eret234785frest" style="white-space: normal;">
+(U)The opportunity for third-country intelligence services mounting a technical attack against U.S. facilities is limited due to proactive host country protection.(A96672-01 Sept 2002;A95959-01 MArch 2002; FBIS, LAP20010510000021, 10 May 01; State 57573-8 MAr 95)" 
+<ice:outputText value=" ["/>
+<ice:commandLink id="dtest065go" style="font-size: xx-small">Edit Analysis</ice:commandLink>
+<ice:outputText value="] "/>
+</ice:outputText>
+
+</ice:panelGrid>
+			</td>
+			
+			<td id="ne3winfo56d0utaba" style="float: none; border: .02em; border-style: solid; border-color: silver; padding: .20em">
+					
+<ice:panelGrid id="f3r234gfdtest" style="cursor:move;" >
+<ice:outputText id="eret2345frest" style="white-space: normal;">
+(U)CIO continues to be capable of audio operations against hotel rooms and residences.(A96672-01 Sept 2002;A95959-01 MArch 2002; FBIS, LAP20010510000021, 10 May 01; State 57573-8 MAr 95)" 
+<ice:outputText value=" ["/>
+<ice:commandLink id="d4test65go" style="font-size: xx-small">Edit Analysis</ice:commandLink>
+<ice:outputText value="] "/>
+</ice:outputText>
+
+</ice:panelGrid>
+			</td>
+			
+			<td id="ne43winfo56d0utaba" style="float: none; border: .02em; border-style: solid; border-color: silver; padding: .20em">
+					
+<ice:panelGrid id="f2r234gfdtest" style="cursor:move;" >
+<ice:outputText id="eret232345frest" style="white-space: normal;">
+(U)CSIS continues to believe that the Russian Foreign Intelligence Service (SVR) has greatly reduced its 
+level of activity in Canada and has been largely involved in collection of overt commercial information.  The Main Intelligence Directorate (GRU) 
+remains active and continues to develop Canadian officials, presumably as recruitment targets.(A96672-01 Sept 2002;A95959-01 MArch 2002; FBIS, LAP20010510000021, 10 May 01; State 57573-8 MAr 95)" 
+<ice:outputText value=" ["/>
+<ice:commandLink id="dtest6345go" style="font-size: xx-small">Edit Analysis</ice:commandLink>
+<ice:outputText value="] "/>
+</ice:outputText>
+
+</ice:panelGrid>
+			</td>
+					
+					<td id="newinfoButdata" style="float: none; border: .20em; border-style: solid; border-color: silver; padding: .20em">
+					<ice:panelGrid columns="2" id="drgterButdata" rendered="false" >
+			
+					<ice:commandButton id="dfsgsdfgEditdata" value="Create Analysis:" style="font-size: xx-small"/>
+                	<ice:commandButton id="editInfdaata" value="Link Analysis" style="font-size: xx-small"/>
+                	
+                	
+                </ice:panelGrid>
+                </td>
+                </ice:panelGrid>
+					
+					</ice:panelGrid>
+					</td>
+				</ice:panelGrid>
+				
+				<ice:panelGrid columns="1" id="artifqw23Equip" style="width: 888px">
+					<td id="newinfroertEquip" style="float: none; border: .02em; border-style: solid; border-color: silver; padding: .20em">
+					<ice:panelGrid columns="1" id="drgteererEquip">
+					<ice:outputLabel id="relatqqqeAnaEquip" value="The Facility and Surroundings"/>
+					
+					 
+					
+					<ice:panelGrid columns="1" id="artifBweeequtequip" >
+					
+					<td id="newginfo56d0utaba" style="float: none; border: .02em; border-style: solid; border-color: silver; padding: .20em">
+					
+<ice:panelGrid id="fr89234gfdtest" style="cursor:move;" >
+<ice:outputText id="e89ret2345frest" style="white-space: normal;">
+(U)CSIS continues to believe that the Russian Foreign Intelligence Service (SVR) has greatly reduced its 
+level of activity in Canada and has been largely involved in collection of overt commercial information.  The Main Intelligence Directorate (GRU) 
+remains active and continues to develop Canadian officials, presumably as recruitment targets.(A96672-01 Sept 2002;A95959-01 MArch 2002; FBIS, LAP20010510000021, 10 May 01; State 57573-8 MAr 95)" 
+<ice:outputText value=" ["/>
+<ice:commandLink id="d89test65go" style="font-size: xx-small">Edit Analysis</ice:commandLink>
+<ice:outputText value="] "/>
+</ice:outputText>
+
+</ice:panelGrid>
+			</td>
+					
+					<td id="newinfoBqqwweeeutequip" style="float: none; border: .20em; border-style: solid; border-color: silver; padding: .20em">
+					<ice:panelGrid columns="2" id="drgtereqqrButequip" >
+			
+					<ice:commandButton id="dfsgqqesdfgEditequip" value="Create Analysis:" style="font-size: xx-small"/>
+                	<ice:commandButton id="editIreqsdnfequip" value="Add Analysis" style="font-size: xx-small"/>
+                	
+                	
+                </ice:panelGrid>
+                </td>
+                </ice:panelGrid>
+					
+					</ice:panelGrid>
+					</td>
+				</ice:panelGrid><ice:panelGrid columns="1" id="artifEwerqughip" style="width: 888px">
+					<td id="new3infoEquip" style="float: none; border: .02em; border-style: solid; border-color: silver; padding: .20em">
+					<ice:panelGrid columns="1" id="drgte4rEquip">
+					<ice:outputLabel id="relate6AnaEquip" value="Host Country Services"></ice:outputLabel>
+					
+					 
+					
+					<ice:panelGrid columns="1" id="artif76Butequip">
+					
+					<td id="ne09winfo56d0utaba" style="float: none; border: .02em; border-style: solid; border-color: silver; padding: .20em">
+					
+<ice:panelGrid id="fr23094gfdtest" style="cursor:move;" >
+<ice:outputText id="e09ret2345frest" style="white-space: normal;">
+(U)CSIS continues to believe that the Russian Foreign Intelligence Service (SVR) has greatly reduced its 
+level of activity in Canada and has been largely involved in collection of overt commercial information.  The Main Intelligence Directorate (GRU) 
+remains active and continues to develop Canadian officials, presumably as recruitment targets.(A96672-01 Sept 2002;A95959-01 MArch 2002; FBIS, LAP20010510000021, 10 May 01; State 57573-8 MAr 95)" 
+<ice:outputText value=" ["/>
+<ice:commandLink id="d09test65go" style="font-size: xx-small">Edit Analysis</ice:commandLink>
+<ice:outputText value="] "/>
+</ice:outputText>
+
+</ice:panelGrid>
+			</td>
+			
+			<td id="n89ewi90nfo56d0utaba" style="float: none; border: .02em; border-style: solid; border-color: silver; padding: .20em">
+					
+<ice:panelGrid id="f90r234gfdtest" style="cursor:move;" >
+<ice:outputText id="e90ret2345frest" style="white-space: normal;">
+(U)CSIS continues to believe that the Russian Foreign Intelligence Service (SVR) has greatly reduced its 
+level of activity in Canada and has been largely involved in collection of overt commercial information.  The Main Intelligence Directorate (GRU) 
+remains active and continues to develop Canadian officials, presumably as recruitment targets.(A96672-01 Sept 2002;A95959-01 MArch 2002; FBIS, LAP20010510000021, 10 May 01; State 57573-8 MAr 95)" 
+<ice:outputText value=" ["/>
+<ice:commandLink id="d90test65go" style="font-size: xx-small">Edit Analysis</ice:commandLink>
+<ice:outputText value="] "/>
+</ice:outputText>
+
+</ice:panelGrid>
+			</td>
+					
+					<td id="newi4nfoButequip" style="float: none; border: .20em; border-style: solid; border-color: silver; padding: .20em">
+					<ice:panelGrid columns="2" id="drgte2rButequip">
+			
+					<ice:commandButton id="dfsgsdf4gEditequip" value="Create Analysis:" style="font-size: xx-small"/>
+                	<ice:commandButton id="editInfe6quip" value="Add Analysis" style="font-size: xx-small"></ice:commandButton>
+                	
+                	
+                </ice:panelGrid>
+                </td>
+                </ice:panelGrid>
+					
+					</ice:panelGrid>
+					</td>
+				</ice:panelGrid><ice:panelGrid columns="1" id="artifg1qzhfEquip" style="width: 888px">
+					<td id="newr4tinfoEquip" style="float: none; border: .02em; border-style: solid; border-color: silver; padding: .20em">
+					<ice:panelGrid columns="1" id="drgtertgEquip">
+					<ice:outputLabel id="relatergfAnaEquip" value="Host Country Close-Access Targeting Methods and Capabilities"></ice:outputLabel>
+					
+					 <td id="n89e45wi90nfo56d0utaba" style="float: none; border: .02em; border-style: solid; border-color: silver; padding: .20em">
+					
+<ice:panelGrid id="f90r34234gfdtest" style="cursor:move;" >
+<ice:outputText id="e90r34et2345frest" style="white-space: normal;">
+No Analysis has been link to this section.
+
+</ice:outputText>
+
+</ice:panelGrid>
+			</td>
+					
+					<ice:panelGrid columns="1" id="artifBugd3tequip">
+					<td id="newi47nfoButequip" style="float: none; border: .20em; border-style: solid; border-color: silver; padding: .20em">
+					<ice:panelGrid columns="2" id="drgt76erButequip">
+			
+					<ice:commandButton id="dfsg67sdfgEditequip" value="Create Analysis:" style="font-size: xx-small"/>
+                	<ice:commandButton id="editInf8hfequip" value="Add Analysis" style="font-size: xx-small"></ice:commandButton>
+                	
+                	
+                </ice:panelGrid>
+                </td>
+                </ice:panelGrid>
+					
+					</ice:panelGrid>
+					</td>
+				</ice:panelGrid><ice:panelGrid columns="1" id="artif456ghfEquip" style="width: 888px">
+					<td id="newinf45oEquip" style="float: none; border: .02em; border-style: solid; border-color: silver; padding: .20em">
+					<ice:panelGrid columns="1" id="dr34gt45erEquip">
+					<ice:outputLabel id="re34lat45eAnaEquip" value="Host Country Cyber Targeting Methods and Capabilities"></ice:outputLabel>
+					
+					 <td id="n89e445wi90nfo56d0utaba" style="float: none; border: .02em; border-style: solid; border-color: silver; padding: .20em">
+					
+<ice:panelGrid id="f90r334234gfdtest" style="cursor:move;" >
+<ice:outputText id="e90r434et2345frest" style="white-space: normal; ">
+No Analysis has been link to this section.
+
+</ice:outputText>
+
+</ice:panelGrid>
+			</td>
+					
+					<ice:panelGrid columns="1" id="a34rtifButequip">
+					<td id="ne43winfoButequip" style="float: none; border: .20em; border-style: solid; border-color: silver; padding: .20em">
+					<ice:panelGrid columns="2" id="dr34gterButequip">
+			
+					<ice:commandButton id="df43sgsdfgEditequip" value="Create Analysis:" style="font-size: xx-small"/>
+                	<ice:commandButton id="e34ditInfequip" value="Add Analysis" style="font-size: xx-small"></ice:commandButton>
+                	
+                	
+                </ice:panelGrid>
+                </td>
+                </ice:panelGrid>
+					
+					</ice:panelGrid>
+					</td>
+				</ice:panelGrid><ice:panelGrid columns="1" id="a23artdisdfgfEquip" style="width: 888px">
+					<td id="a23newinfoEquip" style="float: none; border: .02em; border-style: solid; border-color: silver; padding: .20em">
+					<ice:panelGrid columns="1" id="a32drgterEquip">
+					<ice:outputLabel id="r32elateAnaEquip" value="Intelligence Relations and Liaisons"></ice:outputLabel>
+					
+					 
+					
+					<ice:panelGrid columns="1" id="fdartifButequip">
+					<td id="dfnewinfoButequip" style="float: none; border: .20em; border-style: solid; border-color: silver; padding: .20em">
+					<ice:panelGrid columns="2" id="gfddrgterButequip">
+			
+					<ice:commandButton id="dfgdfsgsdfgEditequip" value="Create Analysis:" style="font-size: xx-small"/>
+                	<ice:commandButton id="a35editInfequip" value="Add Analysis" style="font-size: xx-small"></ice:commandButton>
+                	
+                	
+                </ice:panelGrid>
+                </td>
+                </ice:panelGrid>
+					
+					</ice:panelGrid>
+					</td>
+				</ice:panelGrid><ice:panelGrid columns="1" id="a45artikjtyfEquip" style="width: 888px">
+					<td id="a65newinfoEquip" style="float: none; border: .02em; border-style: solid; border-color: silver; padding: .20em">
+					<ice:panelGrid columns="1" id="a45drgterEquip">
+					<ice:outputLabel id="a456relateAnaEquip" value="3rd Country Presence and Activities"></ice:outputLabel>
+					
+					 
+					
+					<ice:panelGrid columns="1" id="er456rartifButequip">
+					<td id="wenewinfoButequip" style="float: none; border: .20em; border-style: solid; border-color: silver; padding: .20em">
+					<ice:panelGrid columns="2" id="eredrgterButequip">
+			
+					<ice:commandButton id="we34edfsgsdfgEditequip" value="Create Analysis:" style="font-size: xx-small"/>
+                	<ice:commandButton id="we3443weditInfequip" value="Add Analysis" style="font-size: xx-small"></ice:commandButton>
+                	
+                	
+                </ice:panelGrid>
+                </td>
+                </ice:panelGrid>
+					
+					</ice:panelGrid>
+					</td>
+				</ice:panelGrid><ice:panelGrid columns="1" id="we332arti89uyufEquip" style="width: 888px">
+					<td id="w2e3newinfoEquip" style="float: none; border: .02em; border-style: solid; border-color: silver; padding: .20em">
+					<ice:panelGrid columns="1" id="drgterEquip">
+					<ice:outputLabel id="e43rwelateAnaEquip" value="Other Elements' Capabilities and Activities"></ice:outputLabel>
+					
+					 
+					
+					<ice:panelGrid columns="1" id="artiftButerequip">
+					<td id="newienfoButeqyuip" style="float: none; border: .20em; border-style: solid; border-color: silver; padding: .20em">
+					<ice:panelGrid columns="2" id="drgeterButetquip">
+			
+					<ice:commandButton id="dfsgsdfrtgEditequip" value="Create Analysis:" style="font-size: xx-small"/>
+                	<ice:commandButton id="editInerfequip" value="Add Analysis" style="font-size: xx-small"></ice:commandButton>
+                	
+                	
+                </ice:panelGrid>
+                </td>
+                </ice:panelGrid>
+					
+					</ice:panelGrid>
+					</td>
+				</ice:panelGrid><ice:panelGrid columns="1" id="a32rtifE67drtquip" style="width: 888px">
+					<td id="newin123refoEquip" style="float: none; border: .02em; border-style: solid; border-color: silver; padding: .20em">
+					<ice:panelGrid columns="1" id="d12rgteerEquip" >
+					<ice:outputLabel id="rela32rteAnaEquip" value="Host Country Targeting of 3rd Country Interests"></ice:outputLabel>
+					
+					 
+					
+					<ice:panelGrid columns="1" id="artiferButequip">
+					<td id="nqqewinfoBwutequip" style="float: none; border: .20em; border-style: solid; border-color: silver; padding: .20em">
+					<ice:panelGrid columns="2" id="drgterBrewqr234utequip" >
+			
+					<ice:commandButton id="dferrsgsdfgEditequip" value="Create Analysis:" style="font-size: xx-small"/>
+                	<ice:commandButton id="editInfrrequip" value="Add Analysis" style="font-size: xx-small"></ice:commandButton>
+                	
+                	
+                </ice:panelGrid>
+                </td>
+                </ice:panelGrid>
+					
+					</ice:panelGrid>
+					</td>
+				</ice:panelGrid><ice:panelGrid columns="1" id="arti2345sefEquip" style="width: 888px">
+					<td id="newinfoEquip" style="float: none; border: .02em; border-style: solid; border-color: silver; padding: .20em">
+					<ice:panelGrid columns="1" id="drgterEquip">
+					<ice:outputLabel id="relateAnaEquip" value="Host Country Targeting of U.S. Missions, Interests, and Personnel"></ice:outputLabel>
+					
+					 
+					
+					<ice:panelGrid columns="1" id="artifButequip">
+					<td id="newinfoButequip" style="float: none; border: .20em; border-style: solid; border-color: silver; padding: .20em">
+					<ice:panelGrid columns="2" id="drgterButequip">
+			
+					<ice:commandButton id="dfsgsdfgEditequip" value="Create Analysis" style="font-size: xx-small"/>
+                	<ice:commandButton id="editInfequip" value="Add Analysis" style="font-size: xx-small"></ice:commandButton>
+                	
+                	
+                </ice:panelGrid>
+                </td>
+                </ice:panelGrid>
+					
+					</ice:panelGrid>
+					</td>
+				</ice:panelGrid>
+				
+				
+				<ice:panelGrid columns="1" id="artifBut" style="width: 888px">
+					<td id="newinfoBut" style="float: none; border: .20em; border-style: solid; border-color: silver; padding: .20em">
+					<ice:panelGrid columns="4" id="drgterBut" style="width: 822px">
+			
+					<ice:outputText id="dfsgsdfgSubmit" value="Submit Details" />
+                	<ice:commandButton id="submitInfo" value="Save Details"  />
+			
+					<ice:outputText id="dfsgsdfgEdit" value="Edit View" />
+                	<ice:commandButton id="editInfo" value="Edit Details" />
+                	
+                	
+                </ice:panelGrid>
+                </td>
+                </ice:panelGrid>
+
+					</ice:panelCollapsible>
+				</ice:panelGroup>
+</div>
+</ice:panelGroup>
+
+			
+</ice:form>
+ </ui:define>
+ 
+			<ui:define name="footer"/>
+	</ui:composition> 
+</f:view>

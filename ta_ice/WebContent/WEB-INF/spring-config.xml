@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+							http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.0.xsd
+							http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-2.0.2.xsd">
+						 
+	
+<!-- Provides security method filtering -->
+	<security:global-method-security secured-annotations="enabled" jsr250-annotations="enabled"/>
+
+	<!-- Authentication Entry Point and Processing Filter -->
+	<security:http auto-config="true" access-denied-page="/jsp/accessDenied.iface">
+		<security:form-login 
+			login-page="/jsp/login.iface" 	
+			authentication-failure-url="/jsp/accessDenied.iface?error=true" 
+			default-target-url="/jsp/todo.xhtml"
+			always-use-default-target='true' />	
+		<security:logout logout-success-url="/jsp/logoutSuccess.iface" />
+		
+		<!-- intercept patterns -->
+		<security:intercept-url pattern="jsp/login.iface" filters="none" />
+		<security:intercept-url pattern="jsp/admin/**" access="ROLE_ADMIN" />
+		<security:intercept-url pattern="jsp/**" access="IS_AUTHENTICATED_FULLY" />
+		 <!-- Concurrent Sessions Settings --> 
+		<security:concurrent-session-control max-sessions="10"/>
+		
+	</security:http>
+	
+		<security:authentication-provider>
+		 <security:user-service>
+		 <security:user password="password" name="admin" authorities="ROLE_USER,ROLE_ADMIN"/>
+		 </security:user-service>
+		<!-- <security:jdbc-user-service data-source-ref="dataSource"
+			users-by-username-query="SELECT username, password, enabled FROM MASSEMAIL.USERS WHERE USERNAME=ADMIN"
+			authorities-by-username-query="SELECT username, rolename FROM MASSEMAIL.users, MASSEMAIL.roles, MASSEMAIL.authorities WHERE USERS.USER_SEQ = AUTHORITIES.USER_SEQ AND AUTHORITIES.ROLE_SEQ = ROLES.ROLE_SEQ AND username=?" />
+		 -->
+	</security:authentication-provider>
+	
+
+	
+	<!-- Security Messages -->
+	<!-- <bean id="messageSource"
+		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="basename" value="org/springframework/security/messages"/>
+	</bean> -->
+	
+	<!-- Transaction Manager Info -->
+	
+	
+	<!-- <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		 <property name="dataSource" ref="dataSource" /> 
+	</bean>
+	
+	
+	<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean"
+		scope="singleton">
+		<property name="jndiName" value="/jdbc/td" />
+		<property name="resourceRef" value="true" />
+	</bean>
+	 -->
+	<!-- Security bean definition -->
+	 <!-- <bean id="SiteAdminDAO" class="com.demo.app.dao.db.jdbc.SiteAdminDAOImpl" >
+		 <property name="threatDS" ref="dataSource" /> 
+		<property name="transactionManager" ref="transactionManager" />
+	</bean> 
+	
+	
+	 <bean id="AddressDAO" class="com.demo.app.dao.db.jdbc.AddressDAOImpl" >
+		 <property name="threatDS" ref="dataSource" /> 
+		<property name="transactionManager" ref="transactionManager" />
+	</bean> 
+	 -->
+	
+	
+	<!-- Security related beans -->
+	<!-- <bean id="siteAdminService" class="com.demo.app.services.security.SiteAdminServiceImpl">		
+		<property name="siteAdminDAO" ref="SiteAdminDAO" />		
+	</bean> -->
+	
+	
+	
+	<!-- Security related beans -->
+	<!-- <bean id="addressService" class="com.demo.app.services.address.AddressServiceImpl">		
+		<property name="addressDAO" ref="AddressDAO" />		
+	</bean>
+	
+	
+
+	 <bean id="accountService" class="com.demo.app.services.security.SiteAdminServiceImpl" /> 
+	 -->
+
+</beans>	

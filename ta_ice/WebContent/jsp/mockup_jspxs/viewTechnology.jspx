@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<f:view xmlns:f="http://java.sun.com/jsf/core"
+		xmlns:h="http://java.sun.com/jsf/html"
+		xmlns:ice="http://www.icesoft.com/icefaces/component"
+		xmlns:sec="http://www.springframework.org/security/facelets/tags"
+		xmlns:sql="http://java.sun.com /jsp/jstl/sql"
+		xmlns:ui="http://java.sun.com/jsf/facelets">
+		
+	
+		<ui:composition template="/jsp/templates/template.jspx" >
+			<ui:param name="title" value="Create Analysis" />
+			<ui:define name="menu" />
+			<ui:define name="content" >
+			
+	
+<ice:form>
+<ice:outputStyle href="/css/xp/xp.css" />
+<div align="center">
+	<ice:panelTab id="todoTab" label="Todo" >
+				
+				<ice:panelGroup>
+					<ice:panelCollapsible id="activeAnalysisPanel" style="width: 940px" expanded="true">
+					<f:facet name="header">
+						<ice:panelGroup style="text-align: left">
+							<ice:outputText id="analysisCollapsiblePanel" value="Technology" style="font-size: small"/>			
+						</ice:panelGroup>
+					</f:facet>
+					
+										<td id="newinhjfo" style="float: none; border: .02em; border-style: solid; border-color: silver; padding: .20em;">
+					
+				<ice:panelGrid columns="2"  
+						   	style="margin:25px; background-image: none; 
+						   	letter-spacing: normal; font-family: Verdana, Arial, Sans-Serif; 
+						   	word-spacing: normal">
+
+							<!-- Analysis ID -->
+							<ice:outputLabel  value="Technology ID: "/>
+							<ice:outputText style="width: 350px" value="8759342"/>
+							
+							
+							<!-- Analysis Date -->
+							<ice:outputLabel value="Date:" />
+							<ice:inputText style="width: 350px" value="10-24-2011"></ice:inputText>
+							
+							
+							<ice:outputLabel value="Name: " />
+							
+							<ice:inputText style="width: 350px" value="Blackberry Curve"></ice:inputText>
+
+							
+							<!-- Classification -->
+							<ice:outputLabel value="Classification:" />
+							
+									<ice:selectOneMenu partialSubmit="true" style="width: 400px" >
+														<f:selectItem id="requestTysdpe"  itemValue="UNCLASSIFIED//FOR OFFFICIAL USE ONLY"/>
+									
+									</ice:selectOneMenu>
+							
+							<!-- Analysis Text -->
+							<ice:outputLabel value="Description:" />
+							<ice:inputText id="textbox"  value="This device is crap!!!"
+								size="200" disabled="false" style="height: 250px; width: 400px"/>
+													
+													
+													
+													
+							
+						
+						</ice:panelGrid>
+								
+					</td>
+					
+				<ice:panelGrid  id="drgtfgth45rButfg" style="width: 550px">
+								<td id="newinhgfoButfgh" style="float: none; border: .02em; border-style: solid; border-color: silver; padding: .20em;">
+			<ice:panelGrid id="dfhjhsdf" columns="5" style="width: 477px">
+					<ice:outputText id="dfsgsdfggrhEdithjf" value="Unlink Technology: " />
+                	<ice:commandButton id="edijhtInfofh" value="Delete:" />
+                	<ice:outputLabel></ice:outputLabel>
+                	<ice:outputText id="dfsgsdfghjSubtmitgfhy" value="Edit Technology: " />
+                	<ice:commandButton id="submikjtInfofh" value="Save:"  />
+            </ice:panelGrid>
+                
+                </td>
+                </ice:panelGrid>
+					
+					
+					</ice:panelCollapsible>
+					</ice:panelGroup>
+	</ice:panelTab>
+			</div>		
+			
+</ice:form>
+ </ui:define>
+ 
+			<ui:define name="footer"/>
+	</ui:composition> 
+</f:view>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<f:view xmlns:f="http://java.sun.com/jsf/core"
+		xmlns:h="http://java.sun.com/jsf/html"
+		xmlns:ice="http://www.icesoft.com/icefaces/component"
+		xmlns:ui="http://java.sun.com/jsf/facelets">
+		
+		<ice:outputStyle href="/css/rime/rime.css" />
+		<ui:composition template="/jsp/templates/template.jspx" >
+			<ui:param name="title" value="#{msgs['home.title']}" />  
+			<ui:define name="header" />  
+			<ui:define name="content" >
+			<f:loadBundle var="msgs" basename="message"/>
+     <ice:form>
+		<ice:outputText value="Help feature to be added."/>
+		<ice:messages />
+     </ice:form>
+		</ui:define>  
+		<ui:define name="footer"/>
+	</ui:composition>
+</f:view>

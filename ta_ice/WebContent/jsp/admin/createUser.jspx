@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<f:view xmlns:f="http://java.sun.com/jsf/core"
+		xmlns:h="http://java.sun.com/jsf/html"
+		xmlns:ice="http://www.icesoft.com/icefaces/component"
+		xmlns:ui="http://java.sun.com/jsf/facelets">
+		
+	
+	<ui:composition template="/jsp/templates/template.jspx" >
+		<ui:param name="title" value="#{msgs['home.titlePage']}" />  
+		<ui:define name="header" /> 
+		<ui:define name="menu" /> 
+		<ui:define name="content" >
+		
+		<f:loadBundle var="msgs" basename="message"/>
+		<ice:form partialSubmit="true">
+		<ice:outputStyle href="/css/rime/rime.css" />
+		   <ice:panelGroup style="float: none">
+		
+		
+		
+		
+			<ice:panelGrid style="width: 100%;">
+			
+				<div align="center">
+				<ice:panelGroup>
+				
+				<table width="1024px" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+		   
+		    <ice:panelGrid style="width: auto">
+		    	<ice:outputText value="#{msgs['createUser.userInformation']}" style="font-weight: bold; font-size: larger;"/>	
+		    	<br/>
+		    	<ice:panelGrid>
+		
+				    <!-- new user form -->
+				    <ice:panelGrid columns="3">
+						<!-- firstName -->
+						<ice:outputLabel for="firstName" value="#{msgs['createUser.firstName']}:"/>
+						<ice:inputText id="firstName" value="#{createUser.user.firstName}" size="30" 
+							required="true" immediate="false"/>
+						<ice:message for="firstName" style="color: red;"/>
+						
+						<!-- lastName -->
+						<ice:outputLabel for="lastName" value="#{msgs['createUser.lastName']}:" />
+						<ice:inputText id="lastName"  value="#{createUser.user.lastName}" size="30" 
+							required="true" immediate="false"/>
+						<ice:message for="lastName" style="color: red;"/>
+						
+						<!-- username -->
+						<ice:outputLabel for="username" value="#{msgs['createUser.username']}:" />
+						<ice:inputText id="username" value="#{createUser.user.username}" size="30" immediate="true"
+							valueChangeListener="#{createUser.uniqueUsernameListener}" required="true"/>
+						<ice:message for="username" style="color: red;"/>
+						<br/><br/><br/>
+						
+						<!-- Password field -->
+						<div>
+							<ice:outputLabel for="password" value="#{msgs['createUser.password']}: "/>
+							<ice:inputText id="password" value="#{createUser.password}"
+								size="12" required="true" immediate="false">
+								<f:validateLength minimum="6" maximum="12" />
+							</ice:inputText>
+							<ice:message for="password" style="color: red;"/>
+						</div>
+						<div style="margin: 10px">
+							<ice:outputLabel  for="confirmPassword" value="#{msgs['createUser.password']}: "/>
+							<ice:inputText id="confirmPassword" value="#{createUser.confirmPassword}" 
+								valueChangeListener="#{createUser.comparePasswords}"
+								size="12" required="true" immediate="false">
+								<f:validateLength minimum="6" maximum="12" />
+							</ice:inputText>
+						</div>
+						<ice:message for="confirmPassword" style="color: red;"/>
+					</ice:panelGrid>
+					<br/>
+								
+					<!-- Select role select checkbox -->
+					<div style="float: none; border: .05em; border-style: solid; border-color: silver; border-spacing: 5px; border-spacing: 10px" >
+					<ice:panelGrid style="margin: 5px">
+						<div>
+							<ice:outputLabel for="role" value="#{msgs['createUser.role.selection.component.label']}:" 
+								style="font-weight: bold"/>
+							<ice:outputText value="(Choose at least one.)" style="font-size: xx-small;"/>
+						</div>
+						<ice:selectManyCheckbox id="role" value="#{createUser.assignedRoles}" layout="spread"
+							valueChangeListener="#{createUser.roleChanged}" required="true" immediate="false">
+							<f:selectItems id="roleSelectItems" value="#{createUser.allRoles}"/>
+						</ice:selectManyCheckbox>
+					</ice:panelGrid>
+					
+					<ice:panelGrid columns="3">					
+						<ice:panelGrid style="margin: 15px">
+							<ice:checkbox for="role" index="0"/>
+							<ice:checkbox for="role" index="1"/>
+						</ice:panelGrid>
+						<ice:panelGrid style="margin: 15px">
+							<ice:checkbox for="role" index="2"/>
+							<ice:checkbox for="role" index="3"/>
+							<ice:checkbox for="role" index="4" rendered="false"/>
+						</ice:panelGrid>
+						<ice:message for="role" style="color: red;"/>
+					</ice:panelGrid>
+					</div>
+					<br/>
+					<ice:panelGrid columns="4" style="width: auto;">		
+						<!-- enable account checkbox -->
+						<ice:panelGrid columns="2">		
+							 <ice:outputLabel for="enabled" value="#{msgs['createUser.enableAccount']}:" 
+								style="font-weight: bold"/>
+							<ice:selectBooleanCheckbox id="enabled" value="#{createUser.user.enabled}" immediate="false"/>
+						</ice:panelGrid>					
+						<ice:message for="enabled" style="color: red;"/>					
+						<br/>
+						
+						<!-- force password change checkbox -->
+						<ice:panelGrid columns="2">		
+							 <ice:outputLabel for="forcePasswordChange" value="#{msgs['createUser.forcePasswordChange']}:" 
+								style="font-weight: bold"/>
+							<ice:selectBooleanCheckbox id="forcePasswordChange" value="#{createUser.user.passwordExpired}"
+								immediate="false"/>
+						</ice:panelGrid>					
+						<ice:message for="forcePasswordChange" style="color: red;"/>
+					</ice:panelGrid>
+					<br/>
+					
+					<!-- buttons -->
+					<ice:panelGrid columns="5">
+						<ice:commandButton value="#{msgs['createUser.cancelButton']}" action="#{createUser.cancel}" 
+							partialSubmit="true" immediate="true"/>
+						<ice:outputText value="		"/>
+						<ice:commandButton value="#{msgs['createUser.clearFields']}" action="#{createUser.clearValues}" 
+							partialSubmit="true" immediate="true"/>
+						<ice:outputText value="		"/>
+						<ice:commandButton value="#{msgs['createUser.createAccountButton']}" type="submit"
+							action="#{createUser.createNewAccount}" partialSubmit="false" />
+					</ice:panelGrid>				
+				</ice:panelGrid>				
+			</ice:panelGrid>
+			</tr>
+			</table>
+			</ice:panelGroup>
+			</div>
+			</ice:panelGrid>
+			</ice:panelGroup>
+
+		</ice:form>
+	</ui:define>  
+	<ui:define name="footer"/>
+	</ui:composition>
+</f:view>

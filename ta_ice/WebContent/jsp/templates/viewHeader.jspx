@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<f:view 
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component"	
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+	
+	<ice:loadBundle
+		basename="message"
+			var="msgs" />
+			
+	<!-- <div id="classificationHdr">
+		<div id="rpc"><ice:outputText value="#{msgs['template.classification.string']}" style="color: yellow" /></div>
+	</div> -->
+	
+	<ice:form partialSubmit="true">
+		<ice:outputStyle href="/css/rime/rime.css"/>
+		<ice:panelGroup style="float: none">
+			<ice:panelGrid style="width: 516px;">
+				<div align="center">
+					<ice:outputText
+						value="" />
+					<ice:outputText 
+						value="" 
+						style="color: #0000A0 font-style: italic"/>
+				</div>
+			</ice:panelGrid>
+			<ice:panelGrid style="width: 600px; text-align: center">
+				<div align="center">
+					<ice:menuBar orientation="Horizontal" style="text-align: center">
+						<ice:menuItem id="home" action="#{viewELData.refreshViewSubmit}" value="Home" />
+						<ice:menuItem id="help" value="Help">
+							<ice:menuItem id="columnDescription" link="columnDescription.iface" value="Field Definitions "  />
+							<ice:menuItem id="usersManual" link="ELUsersManual.doc" value="Users Manual" />
+						</ice:menuItem>
+					</ice:menuBar>
+				</div>
+			</ice:panelGrid>
+		</ice:panelGroup>
+	</ice:form>
+</f:view>

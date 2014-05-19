@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faces-config
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+    					http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd" version="1.2">
+
+	<application>
+		<variable-resolver>org.springframework.web.jsf.DelegatingVariableResolver</variable-resolver>
+		<locale-config>
+			<default-locale>en</default-locale>
+		</locale-config>
+		<message-bundle>JSF-override</message-bundle>
+		<view-handler>com.icesoft.faces.facelets.D2DFaceletViewHandler</view-handler>
+		
+	</application>
+	
+	<managed-bean>
+		<description>
+			Backing bean for CreateAdmin
+        </description>
+		<managed-bean-name>createAdmin</managed-bean-name>
+		<managed-bean-class>com.demo.app.web.security.CreateAdmin</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	
+	<managed-bean>
+		<description>
+			Backing bean for login
+        </description>
+		<managed-bean-name>loginBean</managed-bean-name>
+		<managed-bean-class>com.demo.app.web.security.LoginBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>	
+	
+	<managed-bean>
+		<description>
+			Backing bean for address
+        </description>
+		<managed-bean-name>createAddress</managed-bean-name>
+		<managed-bean-class>com.demo.app.web.address.CreateAddress</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+  
+  
+  
+	<managed-bean>
+		<description>
+			Backing bean for logout
+        </description>
+		<managed-bean-name>logoutBean</managed-bean-name>
+		<managed-bean-class>com.demo.app.web.security.LogoutBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	
+	<managed-bean>
+		<description>
+			domain object for User
+        </description>
+		<managed-bean-name>user</managed-bean-name>
+		<managed-bean-class>com.demo.app.domain.security.User</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	
+	
+		
+	<managed-bean>
+		<description>
+			Backing bean for SiteAdmin
+        </description>
+		<managed-bean-name>siteAdmin</managed-bean-name>
+		<managed-bean-class>com.demo.app.web.security.SiteAdmin</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<description>
+			Backing bean for CreateUser
+        </description>
+		<managed-bean-name>createUser</managed-bean-name>
+		<managed-bean-class>com.demo.app.web.security.CreateUser</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	
+
+	<managed-bean>
+		<description>
+			Backing bean for ViewUsers
+        </description>
+		<managed-bean-name>viewUsers</managed-bean-name>
+		<managed-bean-class>com.demo.app.web.security.ViewUsers</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+
+<!-- <managed-bean>
+		<description>
+			Backing bean for ShowAddress
+        </description>
+		<managed-bean-name>createAddress</managed-bean-name>
+		<managed-bean-class>com.demo.app.web.address.CreateAddress</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean> -->
+
+
+	<managed-bean>
+		<description>
+			Backing bean for ViewRoles
+        </description>
+		<managed-bean-name>viewRoles</managed-bean-name>
+		<managed-bean-class>com.demo.app.web.security.ViewRoles</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	
+
+	<navigation-rule>
+		<display-name>*</display-name>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>help</from-outcome>
+			<to-view-id>/jsp/help/help.jspx</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+<navigation-rule>
+		<display-name>*</display-name>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>todoPage</from-outcome>
+			<to-view-id>/jsp/todoPage.jspx</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+
+	<navigation-rule>
+		<display-name>jsp/admin/siteAdministration.jspx</display-name>
+		<from-view-id>/jsp/admin/siteAdministration.jspx</from-view-id>
+		<navigation-case>
+			<from-outcome>createUser</from-outcome>
+			<to-view-id>/jsp/admin/createUser.jspx</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<display-name>*</display-name>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>siteAdministration</from-outcome>
+			<to-view-id>/jsp/admin/siteAdministration.jspx</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<display-name>*</display-name>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>siteAdministration</from-outcome>
+			<to-view-id>/jsp/admin/siteAdministration.jspx</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<display-name>*</display-name>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>viewUsers</from-outcome>
+			<to-view-id>/jsp/admin/viewUsers.jspx</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	
+
+	<navigation-rule>
+		<display-name>*</display-name>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>createUser</from-outcome>
+			<to-view-id>/jsp/admin/createUser.jspx</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<display-name>jsp/admin/siteAdministration.jspx</display-name>
+		<from-view-id>/jsp/admin/siteAdministration.jspx</from-view-id>
+		<navigation-case>
+			<from-outcome>viewUsers</from-outcome>
+			<to-view-id>/jsp/admin/viewUsers.jspx</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	
+	<navigation-rule>
+		<display-name>jsp/logoutSuccess</display-name>
+		<from-view-id>/jsp/logoutSuccess.jspx</from-view-id>
+		<navigation-case>
+			<from-outcome>login</from-outcome>
+			<to-view-id>/jsp/login.jspx</to-view-id>
+	</navigation-case>
+		
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>jsp/accessDenied</display-name>
+		<from-view-id>/jsp/accessDenied.jspx</from-view-id>
+		<navigation-case>
+			<from-outcome>login</from-outcome>
+			<to-view-id>/jsp/login.jspx</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<display-name>jsp/admin/createUser.jspx</display-name>
+		<from-view-id>/jsp/admin/createUser.jspx</from-view-id>
+		<navigation-case>
+			<from-outcome>createUser</from-outcome>
+			<to-view-id>/jsp/admin/createUser.jspx</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<display-name>jsp/admin/viewUsers.jspx</display-name>
+		<from-view-id>/jsp/admin/viewUsers.jspx</from-view-id>
+		<navigation-case>
+			<from-outcome>viewUsers</from-outcome>
+			<to-view-id>/jsp/admin/viewUsers.jspx</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+
+	<validator>
+		<validator-id>passwordValidator</validator-id>
+		<validator-class>com.demo.app.web.validators.PasswordValidator</validator-class>
+	</validator>
+	<validator>
+		<validator-id>dateValidator</validator-id>
+		<validator-class>com.demo.app.web.validators.DateValidator</validator-class>
+	</validator>
+</faces-config>

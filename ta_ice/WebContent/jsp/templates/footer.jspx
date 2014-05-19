@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<f:view xmlns:ice="http://www.icesoft.com/icefaces/component"
+	xmlns:f="http://java.sun.com/jsf/core">	
+	<ice:form renderedOnUserRole="ROLE_URLACCESS">
+
+		<ice:outputStyle href="/css/rime/rime.css" />
+
+		<ice:panelGroup style="float: none">
+		<ice:panelGrid style="width: 100%;">
+		<div align="center">
+				<!-- <table width="1200px" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+				<td width="50%" bgcolor="#000000">
+				<div align="right" ><font color="#FF9900">DYNAMIC PAGE - HIGHEST POSSIBLE CLASSIFICATION IS: </font></div>
+				</td>
+				<td width="50%" bgcolor="#FF9900"> &ndsp;&nbsp;SECRET//NOFORN//20320108</td>
+				</tr>
+				</table> -->
+		</div>
+				<ice:panelGroup>
+				<ice:panelGrid>
+				<table width="1200px" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+				<td width="50%">
+		<div align="center">
+			<ice:panelGroup>
+			<div align="left">
+				<ice:panelGrid columns="3">
+				<ice:outputText>Content Owner(s):</ice:outputText>
+				<ice:commandLink>DL TechSecAdmins</ice:commandLink>
+				<ice:outputText>, 968-8501</ice:outputText>
+				</ice:panelGrid>
+				<ice:panelGrid columns="2">
+				<ice:outputText>Web POC:</ice:outputText>
+				<ice:commandLink>Software Development Team I3221</ice:commandLink>
+				</ice:panelGrid>
+		</div>
+		</ice:panelGroup>
+		</div>
+		
+		</td>
+		<td>
+		<div align="center">
+				<ice:panelGroup>
+				<div align="right">
+				<ice:panelGrid columns="1">
+				<ice:outputText style="right: auto">Derived From: NSA/CSSM 1-52</ice:outputText>
+				<ice:outputText style="right: auto">Dated: 20070108</ice:outputText>
+				<ice:outputText style="right: auto">Declassify On: 20320108</ice:outputText>
+				
+				</ice:panelGrid>
+				</div>
+				</ice:panelGroup>
+				
+		</div>
+		</td>
+		</tr>
+		</table>
+		
+		</ice:panelGrid>
+		</ice:panelGroup>
+		</ice:panelGrid>
+		
+		</ice:panelGroup>
+		
+	</ice:form>					
+</f:view>

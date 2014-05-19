@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<f:view xmlns:h="http://java.sun.com/jsf/html"
+		xmlns:f="http://java.sun.com/jsf/core"
+		xmlns:ui="http://java.sun.com/jsf/facelets"
+		xmlns:ice="http://www.icesoft.com/icefaces/component" >
+
+		<ui:composition template="/jsp/templates/template.jspx" >
+			<ui:param name="title" value="Global Equipment List" />
+			<ui:define name="menu" />
+			<ui:define name="content" >
+			<f:loadBundle var="msgs" basename="message" />
+			
+<ice:form>
+<ice:outputStyle href="/css/xp/xp.css" />
+	<ice:panelGroup>
+		<div align="center">
+        	<ice:dataTable width="70%" border="1">
+  
+        		 <f:facet name="header">
+                   	<ice:columnGroup>
+                    	
+                        	<ice:headerRow>
+                            		<ice:column colspan="2">
+                                		<ice:outputText value="Global Equipment List Item" style="font-size: large"/>
+                            		</ice:column>
+                        	</ice:headerRow>
+
+                        	<ice:headerRow>
+                            		<ice:column>
+                                		<ice:outputText value="Country:"/>
+                            		</ice:column>
+                            		<ice:column>
+                            			<ice:panelGroup style="text-align: left">
+                                			<ice:outputText value="Argentina" />
+                                		</ice:panelGroup>
+                            		</ice:column>
+                        	</ice:headerRow>
+
+                        	<ice:headerRow>
+                            		<ice:column>
+                                		<ice:outputText value="Status:"/>
+                            		</ice:column>
+                            		<ice:column>
+                            			<ice:panelGroup style="text-align: left">
+                                			<ice:outputText value="Avail" />
+                                		</ice:panelGroup>
+                            		</ice:column>
+                        	</ice:headerRow>
+
+                        	<ice:headerRow>
+                            		<ice:column>
+                                		<ice:outputText value="Organization:"/>
+                            		</ice:column>
+                            		<ice:column>
+                            			<ice:panelGroup style="text-align: left">
+                                			<ice:outputText value="Secretariat for Intelligence (SI or SIDE)" />
+                                		</ice:panelGroup>
+                            		</ice:column>
+                        	</ice:headerRow>
+
+                        	<ice:headerRow>
+                            		<ice:column>
+                                		<ice:outputText value="Acquired:"/>
+                            		</ice:column>
+                            		<ice:column>
+                            			<ice:panelGroup style="text-align: left">
+                                			<ice:outputText value=""/>
+                                		</ice:panelGroup>
+                            		</ice:column>
+                        	</ice:headerRow>
+
+                        	<ice:headerRow>
+                            		<ice:column>
+                                		<ice:outputText value="DOI:"/>
+                            		</ice:column>
+                            		<ice:column>
+                            			<ice:panelGroup style="text-align: left">
+                                			<ice:outputText value="29-Apr-08"/>
+                                		</ice:panelGroup>
+                            		</ice:column>
+                        	</ice:headerRow>
+
+                        	<ice:headerRow>
+                            		<ice:column>
+                                		<ice:outputText value="Quantity"/>
+                            		</ice:column>
+                            		<ice:column>
+                            			<ice:panelGroup style="text-align: left">
+                                			<ice:outputText value="1"/>
+                                		</ice:panelGroup>
+                            		</ice:column>
+                        	</ice:headerRow>
+
+                        	<ice:headerRow>
+                            		<ice:column>
+                                		<ice:outputText value="Equipment Name:"/>
+                            		</ice:column>
+                            		<ice:column>
+                            			<ice:panelGroup style="text-align: left">
+                                			<ice:outputText value=""/>
+                                		</ice:panelGroup>
+                            		</ice:column>
+                        	</ice:headerRow>
+
+                        	<ice:headerRow>
+                            		<ice:column>
+                                		<ice:outputText value="Originating Country:"/>
+                            		</ice:column>
+                            		<ice:column>
+                            			<ice:panelGroup style="text-align: left">
+                                			<ice:outputText value="Denmark"/>
+                                		</ice:panelGroup>
+                            		</ice:column>
+                        	</ice:headerRow>
+
+                        	<ice:headerRow>
+                            		<ice:column>
+                                		<ice:outputText value="Manufacturer:"/>
+                           	 	</ice:column>
+                            		<ice:column>
+                            			<ice:panelGroup style="text-align: left">
+                                			<ice:outputText value="Spectronics"/>
+                                		</ice:panelGroup>
+                            		</ice:column>
+                        	</ice:headerRow>
+
+                        	<ice:headerRow>
+                            		<ice:column>
+                                		<ice:outputText value="Category"/>
+                           	 	</ice:column>
+                            		<ice:column>
+                            			<ice:panelGroup style="text-align: left">
+                            				<ice:outputText value="GSM Intercept" />
+                                		</ice:panelGroup>
+                            		</ice:column>
+                        	</ice:headerRow>
+
+                        	<ice:headerRow>
+                            		<ice:column>
+                                		<ice:outputText value="O/D"/>
+                            		</ice:column>
+                            		<ice:column>
+                            			<ice:panelGroup style="text-align: left">
+                                			<ice:outputText value="O"/>
+                                		</ice:panelGroup>
+                            		</ice:column>
+                        	</ice:headerRow>
+
+                        	<ice:headerRow>
+                            		<ice:column>
+                                		<ice:outputText value="Equipment Description:"/>
+                            		</ice:column>
+                            		<ice:column>
+                            			<ice:panelGroup style="text-align: left">
+                                			<ice:outputText value="Intercepts land line and cellular phone conversations in any of the common digital formats including TDMA and CDMA"/>
+                                		</ice:panelGroup>
+                            		</ice:column>
+                        	</ice:headerRow>
+
+                        	<ice:headerRow>
+                            		<ice:column>
+                                		<ice:outputText value="Intermediary"/>
+                            		</ice:column>
+                            		<ice:column>
+                            			<ice:panelGroup style="text-align: left">
+                                			<ice:outputText value=""/>
+                                		</ice:panelGroup>
+                            		</ice:column>
+                        	</ice:headerRow>
+
+                        	<ice:headerRow>
+                            		<ice:column>
+                                		<ice:outputText value="Intermediary Country:"/>
+                            		</ice:column>
+                            		<ice:column>
+                            			<ice:panelGroup style="text-align: left">
+                                			<ice:outputText value=""/>
+                                		</ice:panelGroup>
+                            		</ice:column>
+                        	</ice:headerRow>
+
+                        	<ice:headerRow>
+                            		<ice:column>
+                                		<ice:outputText value="Source:"/>
+                            		</ice:column>
+                            		<ice:column>
+                            			<ice:panelGroup style="text-align: left">
+                                			<ice:outputText value="TD-314/064694-08"/>
+                                		</ice:panelGroup>
+                            		</ice:column>
+                        	</ice:headerRow>
+
+                        	<ice:headerRow>
+                            		<ice:column>
+                                		<ice:outputText value="Classification:"/>
+                            		</ice:column>
+                            		<ice:column>
+                            			<ice:panelGroup style="text-align: left">
+                                			<ice:outputText value="S//NF"/>
+                                		</ice:panelGroup>
+                            		</ice:column>
+                        	</ice:headerRow>
+                        
+                        
+                    </ice:columnGroup>
+                </f:facet>
+                
+		</ice:dataTable>
+			
+<!-- 			<ice:panelGroup>
+				<ice:panelGrid>
+					<ice:panelGroup>
+						<ice:dataTable width="70%"
+                        			border="1"
+                        			id="imageLink"
+                        			sortColumn="#{viewILData.sortColumnName}"
+							sortAscending="#{viewILData.ascending}"
+							binding="#{viewILData.dataTable}"
+							value="#{viewILData.ilTableData}"
+							var="row3">
+								<ice:column style="text-align: center">
+									<ice:graphicImage url="#{row3.link}"
+                                					alt="Equipment Item Image"
+                                					rendered="#{row3.link != null}" />
+								</ice:column>
+                        		</ice:dataTable>		
+					</ice:panelGroup>
+				</ice:panelGrid>
+			</ice:panelGroup> -->
+		</div>
+	</ice:panelGroup>
+</ice:form>
+		</ui:define>
+	</ui:composition>
+</f:view>

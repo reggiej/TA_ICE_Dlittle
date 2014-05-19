@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="iceDemo" basedir="./" default="clean">
+
+	<property environment="env" />
+	<!-- Load properties file -->
+	<echo message="Loading properties file..." />
+	<loadproperties srcFile="build.properties" />
+	<echo message="Completed loading properties file" />
+	<echo message="JEE Libraries: ${project.jee.lib}" />
+	<echo message="Application Name: ${project.application.name}" />
+	<echo message="Environment: ${project.envoirnment}" />
+	<echo message="Java Home: ${env.JAVA_HOME}" />
+
+	<property name="root.dir" value="./" />
+	<property name="build.dir" value="build" />
+	<property name="webcontent.dir" value="${root.dir}/WebContent" />
+	<property name="lib.dir" value="${webcontent.dir}/WEB-INF/lib" />
+	<property name="extralib.dir" value="${root.dir}/lib" />
+	<property name="generated.dir" value="${root.dir}/generated" />
+	<property name="src.dir" value="${root.dir}/src" />
+	<property name="test.dir" value="${root.dir}/test" />
+	<property name="build.dir" value="${root.dir}/build" />
+	<property name="target.dir" value="${root.dir}/target" />
+	<property name="dist.dir" value="${target.dir}/dist" />
+	<property name="doc.dir" value="${target.dir}/doc" />
+	<property name="report.dir" value="${target.dir}/report" />
+
+	<property name="dist.war" value="${dist.dir}/ta_ice.war" />
+
+	<property name="build.classes.dir" value="${build.dir}/classes" />
+
+
+	<property name="web.dir.classes" value="${webcontent.dir}/WEB-INF/classes" />
+
+
+	<path id="build.class.path">
+		<fileset dir="${lib.dir}">
+			<include name="*.jar" />
+		</fileset>
+		<fileset dir="${project.jee.lib}">
+			<include name="*.jar" />
+			<include name="*.zip" />
+		</fileset>
+		<fileset dir="${extralib.dir}">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+
+	<target name="clean">
+		<echo>Cleaning environment...</echo>
+		<delete dir="${web.dir.classes}" />
+		<delete dir="${build.dir}" />
+		<delete dir="${target.dir}" />
+		<delete dir="${web.dir.classes}" />
+		<echo>Completed cleaning environment...</echo>
+	</target>
+
+	<target name="prepare" depends="clean">
+		<echo>Preparing environment...</echo>
+		<mkdir dir="${build.dir}" />
+		<mkdir dir="${build.classes.dir}" />
+		<mkdir dir="${target.dir}" />
+		<mkdir dir="${dist.dir}" />
+		<mkdir dir="${web.dir.classes}" />
+		<echo>Completed preparing environment.</echo>
+	</target>
+
+	<!-- COMPILE -->
+	<target name="compile" depends="prepare">
+		<echo>Compiling Java files ...</echo>
+		<property name="buildpath" refid="build.class.path" />
+		<javac debug="off" srcdir="${src.dir}:${generated.dir}:${test.dir}" destdir="${build.classes.dir}" includes="**/*" source="1.6" target="1.6" classpathref="build.class.path" verbose="${project.compiler.verbose}">
+			<compilerarg value="-XDignore.symbol.file=true" />
+		</javac>
+		<echo message="Copying properties and configuration files..." />
+		<copy todir="${build.classes.dir}">
+			<fileset dir="${src.dir}">
+				<include name="**/*" />
+				<exclude name="**/*.java" />
+			</fileset>
+		</copy>
+		<copy todir="${web.dir.classes}">
+			<fileset dir="${build.classes.dir}">
+				<include name="**/*" />
+			</fileset>
+		</copy>
+		<echo message="Finished copying properties and configuration files" />
+
+	</target>
+
+	<!-- PACKAGE -->
+	<target name="package" depends="compile">
+		<echo>Packaging war...</echo>
+		<!-- with all resources in place, create the war file -->
+		<war destfile="${dist.war}" webxml="${webcontent.dir}/WEB-INF/web.xml" basedir="${webcontent.dir}" />
+		<echo>Completed packaging war.</echo>
+	</target>
+
+	<!-- REPACKAGE withough compilation -->
+	<target name="repackage">
+		<echo>Repackaging war...</echo>
+		<!-- with all resources in place, create the war file -->
+		<war destfile="${dist.war}" webxml="${webcontent.dir}/WEB-INF/web.xml" basedir="${webcontent.dir}" />
+		<echo>Completed packaging war.</echo>
+	</target>
+
+
+	<!-- Test -->
+	<target name="test" depends="compile">
+		<echo message="Setting up test environment..." />
+		<junit>
+		</junit>
+	</target>
+
+	<!-- Java Doc -->
+	<target name="java-doc">
+		<javadoc destdir="${doc.dir}" author="true" version="true" use="true" windowtitle="ASDW Java Docs">
+
+			<packageset dir="src" defaultexcludes="yes">
+			</packageset>
+
+			<doctitle>
+				<![CDATA[<h1>Demo Application Documentation</h1>]]></doctitle>
+		<bottom>
+			<![CDATA[<i>Copyright &#169; ACNC. All Rights Reserved.</i>]]></bottom>
+		<tag name="todo" scope="all" description="To do:" />
+		<link offline="true" href="http://java.sun.com/j2se/1.5.0/docs/api/" />
+		<link href="http://developer.java.sun.com/developer/products/xml/docs/api/" />
+	</javadoc>
+	</target>
+<!-- PMD -->
+	
+	<!-- JDepend-->
+	<target name="jdepend">
+	<delete dir="${code-review.dir}/jdepend" />
+	<mkdir dir="${code-review.dir}/jdepend" />
+	<jdepend outputfile="${code-review.dir}/jdepend/jdepend.xml" fork="yes" format="xml">
+		<sourcespath>
+			<pathelement location="${src.dir}" />
+		</sourcespath>
+		<classpath>
+			<pathelement location="${build.dir}" />
+		</classpath>
+	</jdepend>
+	</target>
+
+</project>

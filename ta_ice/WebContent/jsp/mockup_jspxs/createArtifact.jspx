@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<f:view xmlns:f="http://java.sun.com/jsf/core" 
+		xmlns:h="http://java.sun.com/jsf/html"
+		xmlns:ice="http://www.icesoft.com/icefaces/component"
+		xmlns:ui="http://java.sun.com/jsf/facelets">
+		
+		
+		<ui:composition template="/jsp/templates/template.jspx" >
+			<ui:param name="title" value="Todo List" />
+			<ui:define name="menu" />
+			<ui:define name="content" >
+			<f:loadBundle var="msgs" basename="message"/>
+	
+<ice:form>
+<ice:outputStyle href="/css/xp/xp.css" />
+	<ice:panelGroup>
+		<div align="center">
+		<ice:panelGroup>
+					<ice:panelCollapsible id="activeArtifactPanel" style="width: 900px" expanded="true">
+					<f:facet name="header">
+						<ice:panelGroup style="text-align: left">
+							<ice:outputText id="artifactCollapsiblePanel" value="Create Artifact" />
+						</ice:panelGroup>
+					</f:facet>
+					
+					
+					
+					<ice:panelGrid columns="1" id="artifactP" >
+					<td id="newinfo" style="float: none; border: .02em; border-style: solid; border-color: silver; padding: .20em; width: 905px">
+					<ice:panelGrid columns="2" id="dfgdg">
+					
+					<ice:outputText id="selectedArtifact" value="Serial Number:" />
+					<ice:inputText style="width: 350px"></ice:inputText>
+               		<ice:outputText id="selectedArtifact2" value="Source Agency:" />
+					<ice:inputText style="width: 350px"></ice:inputText>
+					<ice:outputText id="selectedArtifact4" value="Source:" />
+					<ice:inputText style="width: 350px"></ice:inputText>
+					<ice:outputText id="selectedArtifact5" value="Status:" />
+					<ice:selectOneMenu partialSubmit="true" style="width: 350px" value="" />
+					<ice:outputText id="selectedArtifact6" value="Artifact Date:" />
+					<ice:inputText style="width: 350px"></ice:inputText>
+					<ice:outputText id="selectedArtifact7" value="Title:" />
+					<ice:inputText style="width: 350px"></ice:inputText>
+					<ice:outputText id="selectedArtifact8" value="New Classification:" />
+					<ice:selectOneMenu partialSubmit="true" style="width: 350px" value="" />
+					<ice:outputText id="selectedArtifact9" value="Document Classification:" />
+					<ice:inputText style="width: 350px"></ice:inputText>
+					<ice:outputText id="selectedArtifact10" value="Topics:" />
+					<ice:inputText style="width: 350px"></ice:inputText>
+					<ice:outputText id="selectedArtifact11" value="File size:" />
+					<ice:inputText style="width: 350px"></ice:inputText>
+					</ice:panelGrid>
+					</td>
+				</ice:panelGrid>
+					
+					<ice:panelGrid columns="2" id="artifactPanelnew" width="889px" style="height: 100px">
+					<ice:outputText>Upload File:</ice:outputText>
+					<td id="newfile" style="float: none; border: .02em; border-style: solid; border-color: silver; padding: .20em;">
+					<ice:inputFile style="height: 90; color: red">doc,docx,txt,pdf and jpeg's only</ice:inputFile>
+					</td>
+					</ice:panelGrid>
+					
+				<ice:panelGrid columns="1" id="artif" >
+					<td id="newinfoAna" width="100%" height="85%" style="float: none; border: .02em; border-style: solid; border-color: silver; padding: .20em">
+					<ice:panelGrid columns="1" id="drgter">
+					<ice:outputLabel id="relateAna" value="Linked Analysis"/>
+					<ice:dataTable id="pendingRTADT" 
+						 style="width: 800px" var="row" rows="5" columnWidths="5%,10%,10%,10%,10%,10%,10%" >
+						
+						<ice:column style="text-align: left;width: 40px">
+						
+							<f:facet name="header">
+								<ice:outputText value="AGENCY" />
+							</f:facet>
+						<ice:outputText /> 
+						
+						</ice:column>
+						<ice:column style="text-align: left;width: 80px">
+							<f:facet name="header">
+								<ice:outputText value="DESCRIPTION" />
+							</f:facet>
+						<ice:outputText /> 
+						
+						</ice:column>
+							<ice:column style="text-align: left;width: 40px">
+							<f:facet name="header">
+								<ice:outputText value="CREATED BY" />
+							</f:facet>
+						<ice:outputText /> 
+						
+						</ice:column >
+						<ice:column style="text-align: left;width: 80px">
+							<f:facet name="header">
+								<ice:outputText value="CREATED DATE" />
+							</f:facet>
+						<ice:outputText /> 
+						
+						</ice:column >
+						<ice:column style="text-align: left;width: 100px">
+							<f:facet name="header">
+								<ice:outputText value="LINKED BY" />
+							</f:facet>
+						<ice:outputText /> 
+						
+						</ice:column>
+						
+						<ice:column style="text-align: left;width: 100px">
+							<f:facet name="header">
+								<ice:outputText value="LINKED DATE" />
+							</f:facet>
+						<ice:outputText /> 
+						
+						</ice:column>
+						
+					</ice:dataTable>
+					<ice:outputText id="anaflagaba" style="color: red" value="No Analysis related to this Artifact"/> 
+					
+					<ice:panelGrid columns="1" id="artifButana" >
+					<td id="newinfoButaba" width="100%" height="85%" style="float: none; border: .02em; border-style: solid; border-color: silver; padding: .20em">
+					<ice:panelGrid columns="2" id="drgterButana" >
+			
+					<ice:outputText id="dfsgsdfgEditaba" value="Add Analysis:" />
+                	<ice:commandButton id="editInfoba" value="Link Analysis" />
+                	
+                	
+                </ice:panelGrid>
+                </td>
+                </ice:panelGrid>
+					
+					</ice:panelGrid>
+					</td>
+					
+				</ice:panelGrid>
+				
+				<ice:panelGrid columns="1" id="artifData" >
+					<td id="newinfoData" width="100%" height="85%" style="float: none; border: .02em; border-style: solid; border-color: silver; padding: .20em">
+					<ice:panelGrid columns="1" id="drgterData">
+					<ice:outputLabel id="relateAnaData" value="Linked DataSheet"/>
+					<ice:dataTable id="pendingRTADTData" 
+						 style="width: 800px" var="row" rows="5" columnWidths="5%,10%,10%,10%,10%,10%,10%" >
+						
+						<ice:column style="text-align: left;width: 40px">
+						
+							<f:facet name="header">
+								<ice:outputText value="CATEGORY" />
+							</f:facet>
+						<ice:outputText /> 
+						
+						</ice:column>
+						<ice:column style="text-align: left;width: 80px">
+							<f:facet name="header">
+								<ice:outputText value="DESCRIPTION" />
+							</f:facet>
+						<ice:outputText /> 
+						
+						</ice:column >
+						<ice:column style="text-align: left;width: 100px">
+							<f:facet name="header">
+								<ice:outputText value="LINKED DATE" />
+							</f:facet>
+						<ice:outputText /> 
+						
+						</ice:column>
+						
+						<ice:column style="text-align: left;width: 100px">
+							<f:facet name="header">
+								<ice:outputText value="LINKED BY" />
+							</f:facet>
+						<ice:outputText /> 
+						
+						</ice:column>
+						
+					</ice:dataTable>
+					<ice:outputText id="datasheettata" style="color: red" value="No Datasheets related to this Artifact"/> 
+					
+					<ice:panelGrid columns="1" id="artifButdata" >
+					<td id="newinfoButdata" width="100%" height="85%" style="float: none; border: .02em; border-style: solid; border-color: silver; padding: .20em">
+					<ice:panelGrid columns="2" id="drgterButdata" >
+			
+					<ice:outputText id="dfsgsdfgEditdata" value="Add Datasheet:" />
+                	<ice:commandButton id="editInfdaata" value="Link Datasheet" />
+                	
+                	
+                </ice:panelGrid>
+                </td>
+                </ice:panelGrid>
+					
+					</ice:panelGrid>
+					</td>
+				</ice:panelGrid>
+				
+				<ice:panelGrid columns="1" id="artifEquip" >
+					<td id="newinfoEquip" width="100%" height="85%" style="float: none; border: .02em; border-style: solid; border-color: silver; padding: .20em">
+					<ice:panelGrid columns="1" id="drgterEquip">
+					<ice:outputLabel id="relateAnaEquip" value="Linked Equipment"/>
+					<ice:dataTable id="pendingRTADTEquip" 
+						 style="width: 800px" var="row" rows="5" columnWidths="5%,10%,10%,10%,10%,10%,10%" >
+						
+						<ice:column style="text-align: left;width: 40px">
+						
+							<f:facet name="header">
+								<ice:outputText value="CATEGORY" />
+							</f:facet>
+						<ice:outputText /> 
+						
+						</ice:column>
+						<ice:column style="text-align: left;width: 80px">
+							<f:facet name="header">
+								<ice:outputText value="DESCRIPTION" />
+							</f:facet>
+						<ice:outputText /> 
+						
+						</ice:column >
+						<ice:column style="text-align: left;width: 100px">
+							<f:facet name="header">
+								<ice:outputText value="LINKED BY" />
+							</f:facet>
+						<ice:outputText /> 
+						
+						</ice:column>
+						
+						<ice:column style="text-align: left;width: 100px">
+							<f:facet name="header">
+								<ice:outputText value="LINKED DATE" />
+							</f:facet>
+						<ice:outputText /> 
+						
+						</ice:column>
+						
+					</ice:dataTable>
+					<ice:outputText id="equipfequip" style="color: red" value="No Equipment is related to this Artifact"/> 
+					
+					<ice:panelGrid columns="1" id="artifButequip" >
+					<td id="newinfoButequip" width="100%" height="85%" style="float: none; border: .02em; border-style: solid; border-color: silver; padding: .20em">
+					<ice:panelGrid columns="2" id="drgterButequip" >
+			
+					<ice:outputText id="dfsgsdfgEditequip" value="Add Equipment:" />
+                	<ice:commandButton id="editInfequip" value="Link Equipment" />
+                	
+                	
+                </ice:panelGrid>
+                </td>
+                </ice:panelGrid>
+					
+					</ice:panelGrid>
+					</td>
+				</ice:panelGrid>
+				
+				
+				<ice:panelGrid columns="1" id="artifBut" style="width: 888px">
+					<td id="newinfoBut" width="100%" height="85%" style="float: none; border: .02em; border-style: solid; border-color: silver; padding: .20em">
+					<ice:panelGrid columns="4" id="drgterBut" style="width: 822px">
+			
+					<ice:outputText id="dfsgsdfgSubmit" value="Submit Details" />
+                	<ice:commandButton id="submitInfo" value="Save Details"  />
+			
+					<ice:outputText id="dfsgsdfgEdit" value="Edit View" />
+                	<ice:commandButton id="editInfo" value="Edit Details" />
+                	
+                	
+                </ice:panelGrid>
+                </td>
+                </ice:panelGrid>
+
+					</ice:panelCollapsible>
+				</ice:panelGroup>
+</div>
+</ice:panelGroup>
+
+			
+</ice:form>
+ </ui:define>
+ 
+			<ui:define name="footer"/>
+	</ui:composition> 
+</f:view>

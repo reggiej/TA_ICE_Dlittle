@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<f:view xmlns:f="http://java.sun.com/jsf/core"
+		xmlns:h="http://java.sun.com/jsf/html"
+		xmlns:ice="http://www.icesoft.com/icefaces/component"
+		xmlns:ui="http://java.sun.com/jsf/facelets">
+
+	<ui:composition template="/jsp/templates/template.jspx" >
+		<ui:param name="title" value="#{msgs['home.title']}" />  
+		<ui:define name="header" /> 
+		<ui:define name="menu" /> 
+		<ui:define name="content" >
+		
+		<f:loadBundle var="msgs" basename="message"/>
+		<ice:form partialSubmit="true">
+			<ice:outputStyle href="/css/rime/rime.css"/>
+		    <ice:messages globalOnly="true" />
+			<ice:panelGroup style="float: none">
+
+			<ice:panelGrid style="width: 100%;">
+			
+				<div align="center">
+				<ice:panelGroup>
+				
+				<table width="1024px" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+				
+			<ice:panelGrid >
+				<ice:panelGrid>
+				
+				<div align="left">
+					<ice:outputText value="View All Users"
+						style="font-style: normal; font-weight: bold; font-size: 14px; 
+						font-family: Verdana, Arial, Sans-Serif" />
+				</div>
+				<ice:panelGrid>
+					<ice:dataTable 
+						rows="8"
+						id="userInventory"
+						value="#{viewUsers.userSearchResult}" var="row">
+						<!-- First Name -->
+						<ice:column>
+							<ice:rowSelector id="selected" 
+								value="#{row.selected}"
+								multiple="false"
+			                    enhancedMultiple="false" 
+			                    selectionListener="#{viewUsers.handleRowSelection}"
+			                    immediate="false"
+			                    preStyleOnSelection="true"/>	
+							<f:facet name="header">
+	                			<ice:outputText value="#{msgs['viewUsers.firstNameColumnName']}"/>
+					        </f:facet>
+				        		<ice:outputText value="#{row.value.firstName}"/>
+				        	</ice:column>
+			
+				        	<!-- Last Name -->
+				        	<ice:column>
+				        		<f:facet name="header">
+		                			<ice:outputLabel value="#{msgs['viewUsers.lastNameColumnName']}"/>
+						        </f:facet>
+				        		<ice:outputText value="#{row.value.lastName}"/>
+				        	</ice:column>
+			
+				        	<!-- Username -->
+				        	<ice:column>
+				        		<f:facet name="header">
+		                			<ice:outputLabel value="#{msgs['viewUsers.usernameColumnName']}"/>
+						        </f:facet>
+				        		<ice:outputText value="#{row.value.username}"/>
+				    		</ice:column>
+			
+				    		<!-- Effective Date -->
+							<ice:column style="text-align: center">
+				        		<f:facet name="header">
+		                			<ice:outputLabel value="#{msgs['viewUsers.effectiveDateColumnName']}"/>
+						        </f:facet>
+				        		<ice:outputText value="#{row.value.effectiveDate}" >
+				        			<f:convertDateTime pattern="MM/dd/yyyy" />
+				        		</ice:outputText>
+				    		</ice:column>
+				    		
+							<!-- Password Expired -->
+							<ice:column style="text-align: center">
+				        		<f:facet name="header">
+		                			<ice:outputLabel value="Password Expired"/>
+						        </f:facet>
+				        		<ice:selectBooleanCheckbox value="#{row.value.passwordExpired}" 
+				        			disabled="true"/>
+				    		</ice:column>
+		    			</ice:dataTable>
+				    	<!-- Paginator with page controls -->
+						<ice:dataPaginator id="dataScroll_3"
+							for="userInventory"
+							paginator="true"
+							fastStep="3" renderFacetsIfSinglePage="false"
+							paginatorMaxPages="4">
+					        <f:facet name="first">
+		                        <ice:graphicImage
+		                            url="/css/rime/css-images/arrow-first.gif"
+		                            style="border:none;"
+		                            title="First Page"/>
+		                    </f:facet>
+		                    <f:facet name="last">
+		                        <ice:graphicImage
+		                            url="/css/rime/css-images/arrow-last.gif"
+		                            style="border:none;"
+		                            title="Last Page"/>
+		                    </f:facet>
+		                    <f:facet name="previous">
+		                        <ice:graphicImage
+		                            url="/css/rime/css-images/arrow-previous.gif"
+		                            style="border:none;"
+		                            title="Previous Page"/>
+		                    </f:facet>
+		                    <f:facet name="next">
+		                        <ice:graphicImage
+		                            url="/css/rime/css-images/arrow-next.gif"
+		                            style="border:none;"
+		                            title="Next Page"/>
+		                    </f:facet>
+		                    <f:facet name="fastforward">
+		                        <ice:graphicImage url="/css/rime/css-images/arrow-ff.gif"
+		                                          style="border:none;"
+		                                          title="Fast Forward"/>
+	                    </f:facet>
+	                    <f:facet name="fastrewind">
+	                        <ice:graphicImage url="/css/rime/css-images/arrow-fr.gif"
+	                                          style="border:none;"
+	                                          title="Fast Backwards"/>
+	                    </f:facet>
+	                </ice:dataPaginator>
+				</ice:panelGrid>
+				</ice:panelGrid>
+				
+				<ice:panelGrid>
+					<div align="left">
+						<ice:outputText id="selectedUser" value="Selected User's Account Details:"
+							style="font-style: normal; font-weight: bold; font-size: 14px; 
+							font-family: Verdana, Arial, Sans-Serif" rendered="#{viewUsers.modifyFlag}"/>
+					</div>
+					<ice:panelGrid>
+						
+						<div style="float: none; border: .02em; border-style: solid; border-color: silver;" >			
+					    
+					    <ice:panelGrid columns="3" rendered="#{viewUsers.modifyFlag}" 
+						   	style="margin:25px; background-image: none; 
+						   	letter-spacing: normal; font-family: Verdana, Arial, Sans-Serif; 
+						   	word-spacing: normal">
+
+							<!-- First Name -->
+							<ice:outputLabel for="firstName" value="#{msgs['viewUsers.firstName']}:"/>
+							<ice:inputText id="firstName" value="#{viewUsers.selectedUser.firstName}" 
+								size="30" disabled="false"/>
+							<ice:message for="firstName" style="color: red;"/>
+							
+							<!-- Last Name -->
+							<ice:outputLabel for="lastName" value="#{msgs['viewUsers.lastName']}:" />
+							<ice:inputText id="lastName" value="#{viewUsers.selectedUser.lastName}" 
+								size="30" disabled="false"/>
+							<ice:message for="lastName" style="color: red;"/>
+							
+							<!-- username -->
+							<ice:outputLabel for="username" value="#{msgs['viewUsers.username']}:" />
+							<ice:inputText id="username" value="#{viewUsers.selectedUser.username}" 
+								size="30" disabled="false"/>
+							<ice:message for="username" style="color: red;"/>
+
+							<br/><br/><br/>
+							<!-- Enable Account -->
+							<ice:outputLabel for="enable" value="#{msgs['viewUsers.enabled']}:"/>
+							<ice:selectBooleanCheckbox id="enable" value="#{viewUsers.selectedUser.enabled}"
+								immediate="false"/>
+							<ice:message for="enable" style="color: red;"/>
+							
+							<!-- Force Password Change -->
+							<ice:outputLabel for="forcePasswordChange" value="#{msgs['viewUsers.forcePasswordChange']}:"/>
+							<ice:selectBooleanCheckbox id="forcePasswordChange" value="#{viewUsers.selectedUser.passwordExpired}" 
+								immediate="false"/>
+							<ice:message for="forcePasswordChange" style="color: red;"/>
+							
+							<br/><br/><br/>
+							<!-- Password -->
+							<div>
+							<ice:outputLabel for="newPassword" value="Enter #{msgs['viewUsers.password']}: "/>
+							<ice:inputSecret id="newPassword" value="#{viewUsers.newPassword}" size="12" immediate="false">
+								<f:validateLength minimum="6" maximum="12" />
+							</ice:inputSecret>
+							</div>
+							<div>
+							<ice:outputLabel for="confirmPassword" value="Re-Enter #{msgs['viewUsers.password']}: " style="padding: 10px"/>
+							<ice:inputSecret id="confirmPassword" value="#{viewUsers.confirmPassword}"
+								valueChangeListener="#{viewUsers.passwordReset}" size="12" immediate="false">
+								<f:validateLength minimum="6" maximum="12" />
+							</ice:inputSecret>
+							</div>
+							<ice:message for="password" style="color: red;"/>
+							
+							<br/><br/><br/>
+							<!-- Roles - Select role checkbox -->
+							<ice:panelGrid style="margin:0px; background-image: none; 
+						   	letter-spacing: normal; font-family: Verdana, Arial, Sans-Serif; 
+						   	word-spacing: normal">
+								<ice:panelGrid>
+							        <ice:outputLabel for="role" value="#{msgs['viewUsers.roles']}:"/>
+									<ice:selectManyCheckbox id="role" value="#{viewUsers.assignedRoles}" layout="spread"
+								       	valueChangeListener="#{viewUsers.roleChanged}" required="true" immediate="false">
+										<f:selectItems id="roleSelectItems" value="#{viewUsers.allRoles}"/>
+									</ice:selectManyCheckbox>
+								</ice:panelGrid>
+							</ice:panelGrid>
+							<ice:panelGrid columns="3">					
+								<ice:panelGrid style="margin: 5px">
+									<ice:checkbox for="role" index="0"/>
+									<ice:checkbox for="role" index="1"/>
+								</ice:panelGrid>
+								<ice:panelGrid style="margin: 5px">
+									<ice:checkbox for="role" index="2"/>
+									<ice:checkbox for="role" index="3"/>
+									<ice:checkbox for="role" index="4" rendered="false"/>
+								</ice:panelGrid>
+								<ice:message for="role" style="color: red;"/>
+							</ice:panelGrid>
+						</ice:panelGrid>
+						
+
+						
+					</div>	
+					</ice:panelGrid>			
+				</ice:panelGrid>
+				
+			</ice:panelGrid>
+			<ice:panelGrid columns="5">
+				<div align="right">
+					<ice:commandButton value="#{msgs['viewUsers.cancelButton']}" action="#{viewUsers.cancel}"  
+						partialSubmit="true" immediate="false"/>
+					<ice:outputText value="		"/>
+					<ice:commandButton value="#{msgs['createUser.clearFields']}" actionListener="#{viewUsers.clearValues}" 
+						partialSubmit="true" immediate="false" rendered="#{viewUsers.modifyFlag}"/>
+					<ice:outputText value="		"/>
+					<ice:commandButton value="#{msgs['viewUsers.updateUserButton']}" type="submit" 
+						action="#{viewUsers.updateUser}" partialSubmit="false" rendered="#{viewUsers.modifyFlag}" />
+				</div>
+			</ice:panelGrid>
+			<ice:messages style="color: red"/>
+			</tr>
+			</table>
+			</ice:panelGroup>
+			</div>
+			</ice:panelGrid>
+			</ice:panelGroup>
+			
+	    </ice:form>
+	   	</ui:define>  
+		<ui:define name="menu"/>                   
+		<ui:define name="footer"/>
+	</ui:composition>
+</f:view>

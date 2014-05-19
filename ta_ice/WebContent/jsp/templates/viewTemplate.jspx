@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<f:view xmlns:f="http://java.sun.com/jsf/core"
+		xmlns:ice="http://www.icesoft.com/icefaces/component"
+		xmlns:ui="http://java.sun.com/jsf/facelets">
+	
+	<html>
+	<head><title>Global Equipment List</title></head>
+	<ice:outputStyle href="/css/rime/rime.css"/>
+	<body style="background-position: center;background-color:white; 
+		background-repeat:no-repeat;background-attachment:fixed;text-align:center">
+	
+	<div id="container">
+		<div id="header" align="center">
+			<ui:include src="/jsp/templates/viewHeader.jspx"/> 
+			<ui:insert name="header"/>
+		</div>
+		
+		<div id="side" align="right">
+				<img src="css/images/TSPsingle_anima02.gif"/>
+		</div>
+		
+		<div id="mainContent">
+			
+			<ui:insert name="content"/>
+		</div>
+		<div id="footer" >
+		    <ui:include src="/jsp/templates/footer.jspx" />
+		    <ui:insert name="footer" />			
+		</div>
+	</div>
+		
+	</body>
+	<ice:messages style="color: red;"/>
+	</html>
+</f:view>

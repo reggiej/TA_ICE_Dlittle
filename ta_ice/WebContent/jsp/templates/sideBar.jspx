@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<f:view 
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component"	
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+	<ice:form partialSubmit="true">
+		<ice:outputStyle href="/css/rime/rime.css"/>
+		<ice:panelGroup style="float: none" >
+			
+			<ice:panelGrid style="width: 30%;">
+				<div align="left">
+				<ice:panelGroup>
+				<table width="250px" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+				<td width="100%" align="center">
+				<table>
+				<tr>
+				<td>
+				<ice:selectInputDate id="ta_calendar" popupDateFormat="EEE, MMM d, yyyy" value="#{viewCalendar.date1}" />
+				</td>
+				</tr>
+				</table>
+				<table>	
+				<tr>
+				<td>
+				<ice:commandButton id="rtaCre" value="Create RTA"/>
+				</td>
+				</tr>
+				</table>
+				<table>
+				<tr>
+				<td>
+				<ice:commandButton id="conopCre" value="Create Conop"/>
+				</td>
+				</tr>
+				</table>
+				</td>
+				</tr>
+				
+				</table>
+					</ice:panelGroup>
+					
+				</div>
+			</ice:panelGrid>
+		</ice:panelGroup>
+	</ice:form>
+</f:view>
